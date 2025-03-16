@@ -654,13 +654,66 @@
                 </div>
             </div>
             
-            <div class="category-card">
-                <img src="jogo-do-bicho.png" alt="Jogo do Bicho">
-                <div class="content">
-                    <h2>Jogo do Bicho</h2>
-                    <p>Faça sua aposta em qualquer loteria usando apenas o celular!</p>
-                    <a href="https://morenodasortejb.github.io/jb/" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; text-decoration: none; color: transparent; background: transparent;"></a>
-                </div>
+<!-- HTML -->
+<div class="category-card" onclick="toggleFloatingLink()">
+    <img src="jogo-do-bicho.png" alt="Jogo do Bicho">
+    <div class="content">
+        <h2>Jogo do Bicho</h2>
+        <p>Faça sua aposta em qualquer loteria usando apenas o celular!</p>
+    </div>
+</div>
+
+<a href="https://aguiaoficial.github.io/jogo-do-bicho/" target="_blank" class="floating-link" id="floatingLink">Aposte Agora</a>
+
+<!-- CSS -->
+<style>
+    .category-card {
+        cursor: pointer; /* Indica que o card é clicável */
+    }
+
+    .floating-link {
+        display: none; /* Começa escondido */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(90deg, #FFD700, #DAA520); /* Gradiente dourado */
+        color: #2c3e50;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000; /* Fica acima de outros elementos */
+        transition: transform 0.3s ease;
+    }
+
+    .floating-link:hover {
+        transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+        background: linear-gradient(90deg, #DAA520, #FFD700);
+    }
+
+    .floating-link.active {
+        display: block; /* Aparece quando ativo */
+    }
+
+    /* Ajuste para dispositivos móveis */
+    @media (max-width: 768px) {
+        .floating-link {
+            padding: 8px 15px;
+            font-size: 0.9em;
+            bottom: 15px;
+            right: 15px;
+        }
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    function toggleFloatingLink() {
+        const link = document.getElementById("floatingLink");
+        link.classList.toggle("active"); /* Alterna entre mostrar e esconder */
+    }
+</script>
         
             </div>
             <div class="category-card">
