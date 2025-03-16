@@ -631,12 +631,15 @@
 
         <section class="categories">
             <div class="category-card">
-                <img src="cassino.png" alt="Cassino">
-                <div class="content">
-                    <h2>Cassino</h2>
-                    <p>Diversos jogos com prêmios sensacionais!</p>
-                    <a href="https://morenodasortejb.github.io/cassino/" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; text-decoration: none; color: transparent; background: transparent;"></a>
-                </div>
+                
+                <a href="https://aguiaoficial.github.io/cassino/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <img src="cassino.png" alt="Cassino">
+                    <div class="content">
+                        <h2>Cassino</h2>
+                        <p>Diversos jogos com prêmios sensacionais!</p>
+                    </div>
+                </a>
+                
 
             </div>
             <div class="category-card">
@@ -654,67 +657,15 @@
                 </div>
             </div>
             
-<!-- HTML -->
-<div class="category-card" onclick="toggleFloatingLink()">
-    <img src="jogo-do-bicho.png" alt="Jogo do Bicho">
-    <div class="content">
-        <h2>Jogo do Bicho</h2>
-        <p>Faça sua aposta em qualquer loteria usando apenas o celular!</p>
-    </div>
-</div>
+            
+            <div class="category-card" onclick="window.open('https://aguiaoficial.github.io/jogo-do-bicho/', '_blank')">
+                <img src="jogo-do-bicho.png" alt="Jogo do Bicho">
+                <div class="content">
+                    <h2>Jogo do Bicho</h2>
+                    <p>Faça sua aposta em qualquer loteria usando apenas o celular!</p>
+                </div>
+            
 
-<a href="https://aguiaoficial.github.io/jogo-do-bicho/" target="_blank" class="floating-link" id="floatingLink">Aposte Agora</a>
-
-<!-- CSS -->
-<style>
-    .category-card {
-        cursor: pointer; /* Indica que o card é clicável */
-    }
-
-    .floating-link {
-        display: none; /* Começa escondido */
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: linear-gradient(90deg, #FFD700, #DAA520); /* Gradiente dourado */
-        color: #2c3e50;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        z-index: 1000; /* Fica acima de outros elementos */
-        transition: transform 0.3s ease;
-    }
-
-    .floating-link:hover {
-        transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-        background: linear-gradient(90deg, #DAA520, #FFD700);
-    }
-
-    .floating-link.active {
-        display: block; /* Aparece quando ativo */
-    }
-
-    /* Ajuste para dispositivos móveis */
-    @media (max-width: 768px) {
-        .floating-link {
-            padding: 8px 15px;
-            font-size: 0.9em;
-            bottom: 15px;
-            right: 15px;
-        }
-    }
-</style>
-
-<!-- JavaScript -->
-<script>
-    function toggleFloatingLink() {
-        const link = document.getElementById("floatingLink");
-        link.classList.toggle("active"); /* Alterna entre mostrar e esconder */
-    }
-</script>
-        
             </div>
             <div class="category-card">
                 <img src="fazendinha.png" alt="Fazendinha">
@@ -818,25 +769,24 @@
             <div class="footer-banner">
          
             </div>
-<div class="footer-cta-container fade-in-section">
-    <p class="footer-banner-slogan">Cadastre-se agora e tenha a sorte nas suas mãos!</p>
-    <a href="#" class="footer-btn" onclick="downloadAndRedirect()">Cadastre-se Agora</a>
-    <p class="footer-slogan">Cadastre-se agora e transforme sua sorte em diversão!</p>
-</div>
-
-<script>
-    function downloadAndRedirect() {
-        // Inicia o download do APK abrindo uma nova aba
-        window.open("https://github.com/Aguiaoficial/aguiaoficial/raw/main/aguiaoficial.apk", "_blank");
-
-        // Usando setTimeout para dar tempo ao navegador de abrir a nova aba e iniciar o download antes do redirecionamento
-        setTimeout(function() {
-            // Redireciona para o link do cadastro após 1 segundo
-            window.location.href = "https://app.aguiaoficial.com/pr/XvrHVdt2";
-        }, 1000); // Atraso de 1 segundo
-    }
-</script>
-   
+            <div class="footer-cta-container fade-in-section">
+                <p class="footer-banner-slogan">Cadastre-se agora e tenha a sorte nas suas mãos!</p>
+                <a href="#" class="footer-btn" onclick="downloadAndRedirect()">Cadastre-se Agora</a>
+                <p class="footer-slogan">Cadastre-se agora e transforme sua sorte em diversão!</p>
+            </div>
+            
+            <script>
+                function downloadAndRedirect() {
+                    // Inicia o download do APK abrindo uma nova aba
+                    window.open("https://github.com/Aguiaoficial/aguiaoficial/raw/main/aguiaoficial.apk", "_blank");
+            
+                    // Usando setTimeout para dar tempo ao navegador de abrir a nova aba e iniciar o download antes do redirecionamento
+                    setTimeout(function() {
+                        // Redireciona para o link do cadastro após 1 segundo
+                        window.location.href = "https://app.aguiaoficial.com/pr/XvrHVdt2";
+                    }, 1000); // Atraso de 1 segundo
+                }
+            </script>
         
             <div class="footer-content">
                 <h3>O que nossos clientes dizem</h3>
@@ -1011,8 +961,22 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.mediafire.com/file/t1x3hrq64w1p0ns/app3514082-esltnv.apk/file" target="_blank">
-                    <i class="fas fa-download"></i> Baixar APK
+                <a href="#" class="footer-btn" onclick="downloadAndRedirect()">BAIXAR APP</a>
+                <p class="footer-slogan">    Baixe agora e se divirta!</p>
+            </div>
+            
+            <script>
+                function downloadAndRedirect() {
+                    // Inicia o download do APK abrindo uma nova aba
+                    window.open("https://github.com/Aguiaoficial/aguiaoficial/raw/main/aguiaoficial.apk", "_blank");
+            
+                    // Usando setTimeout para dar tempo ao navegador de abrir a nova aba e iniciar o download antes do redirecionamento
+                    setTimeout(function() {
+                        // Redireciona para o link do cadastro após 1 segundo
+                        window.location.href = "https://app.aguiaoficial.com/pr/XvrHVdt2";
+                    }, 1000); // Atraso de 1 segundo
+                }
+            </script>
                 </a>
             </li>
         </ul>
