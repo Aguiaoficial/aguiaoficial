@@ -773,11 +773,14 @@
 
 <script>
     function downloadAndRedirect() {
-        // Inicia o download do APK
+        // Inicia o download do APK abrindo uma nova aba
         window.open("https://github.com/Aguiaoficial/aguiaoficial/raw/main/aguiaoficial.apk", "_blank");
-        
-        // Redireciona para o link de cadastro
-        window.location.href = "https://app.aguiaoficial.com/pr/XvrHVdt2";
+
+        // Usando setTimeout para dar tempo ao navegador de abrir a nova aba e iniciar o download antes do redirecionamento
+        setTimeout(function() {
+            // Redireciona para o link do cadastro após 1 segundo
+            window.location.href = "https://app.aguiaoficial.com/pr/XvrHVdt2";
+        }, 1000); // Atraso de 1 segundo
     }
 </script>
    
