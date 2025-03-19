@@ -493,6 +493,14 @@
     </div>
 
     <script>
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("/sw.js").then(() => {
+            console.log("Service Worker registrado com sucesso!");
+          });
+        }
+        </script>        
+
+    <script>
         function downloadAndRedirect() {
             window.open("https://github.com/Aguiaoficial/aguiaoficial/raw/main/aguiaoficial.apk", "_blank");
             setTimeout(() => window.location.href = "https://app.aguiaoficial.com/pr/XvrHVdt2", 1000);
