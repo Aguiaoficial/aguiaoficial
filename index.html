@@ -20,9 +20,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
-    <!-- Pré-carregamento
-    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
-
     <!-- Favicons -->
     <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
@@ -48,8 +45,6 @@
         .category-card .content{padding:15px;flex:1;display:flex;flex-direction:column;justify-content:center}
         .category-card h2{font-size:1.5em;color:#d4af37;margin-bottom:8px}
         .category-card p{font-size:1em;color:#e0e0e0;margin:0}
-        .fade-in-section{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
-        .fade-in-section.visible{opacity:1;transform:translateY(0)}
         .advantages{background:rgba(33,35,48,0.8);padding:50px;border-radius:10px;margin:50px 0;border:1px solid #415a77}
         .advantages h2{text-align:center;color:#d4af37;margin-bottom:30px;font-size:2em}
         .advantages-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;max-width:1200px;margin:0 auto}
@@ -193,7 +188,7 @@
             </div>
         </section>
 
-        <section class="advantages fade-in-section">
+        <section class="advantages">
             <h2>Vantagens da Banca Online</h2>
             <div class="advantages-grid">
                 <div class="advantage-item">
@@ -219,7 +214,7 @@
             </div>
         </section>
 
-        <section class="benefits fade-in-section">
+        <section class="benefits">
             <h2>Vantagens de se cadastrar</h2>
             <div class="benefits-content">
                 <div class="bonus-cards">
@@ -251,7 +246,7 @@
             </div>
         </section>
 
-        <section class="bet-types fade-in-section">
+        <section class="bet-types">
             <h2>Tipos de Aposta e Valores da Cotação</h2>
             <p>Estas cotações são referentes à modalidade Jogo do Bicho, na categoria Loteria.</p>
             <table class="bet-table">
@@ -283,7 +278,7 @@
         </section>
 
         <div class="footer-cta">
-            <div class="footer-cta-container fade-in-section">
+            <div class="footer-cta-container">
                 <p class="footer-banner-slogan">Cadastre-se agora e tenha a sorte nas suas mãos!</p>
                 <a href="#" class="footer-btn" onclick="downloadAndRedirect()">Cadastre-se Agora</a>
                 <p class="footer-slogan">Cadastre-se agora e transforme sua sorte em diversão!</p>
@@ -510,7 +505,7 @@
             console.log("Service Worker registrado com sucesso!");
           });
         }
-        </script>        
+    </script>        
 
     <script>
         function downloadAndRedirect() {
@@ -555,23 +550,6 @@
                     clearTimeout(timeout);
                     timeout = setTimeout(() => func(...args), wait);
                 };
-            };
-
-            const isInViewport = (el) => {
-                const rect = el.getBoundingClientRect();
-                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                return (
-                    rect.top <= windowHeight * 0.9 &&
-                    rect.bottom >= 0
-                );
-            };
-
-            const checkFadeIn = () => {
-                document.querySelectorAll('.fade-in-section').forEach(section => {
-                    if (isInViewport(section) && !section.classList.contains('visible')) {
-                        section.classList.add('visible');
-                    }
-                });
             };
 
             const toggleFloatingButton = debounce(() => {
@@ -646,11 +624,8 @@
                 setTimeout(showWinnerToast, getRandomInterval(10000, 300000));
             };
 
-            checkFadeIn();
-            window.addEventListener('scroll', debounce(checkFadeIn, 50));
             window.addEventListener('scroll', toggleFloatingButton);
             window.addEventListener('load', () => {
-                checkFadeIn();
                 toggleFloatingButton();
                 showWinnerToast();
             });
