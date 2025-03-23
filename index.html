@@ -20,9 +20,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
-    <!-- Pré-carregamento
-    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
-
     <!-- Favicons -->
     <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
@@ -35,10 +32,17 @@
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif}
         body{background:linear-gradient(135deg,#02832d88,#006e37);color:#e0e0e0;line-height:1.6}
         .container{max-width:1300px;margin:0 auto;padding:25px}
-        header{position:relative;text-align:center;padding:100px 0;background:url('header1.avif') center/cover no-repeat;border-radius:10px;margin-bottom:25px;overflow:hidden;border:1px solid #d4af37;transition:background-image 1s ease}
-        header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(48,62,80,0.6);z-index:1}
-        header .slogan{font-size:2.8em;color:#fff;font-weight:700;text-shadow:2px 2px 6px rgba(37,37,37,0.7);position:relative;z-index:2;letter-spacing:1px}
-        .intro{text-align:center;margin-bottom:50px}
+
+        /* Novo menu fixo semi-transparente */
+        nav{position:fixed;top:0;left:0;width:100%;background:rgba(33,35,48,0.85);z-index:1000;padding:15px 0;border-bottom:1px solid #d4af37}
+        .nav-container{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 25px}
+        .nav-logo{font-size:1.5em;color:#d4af37;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+        .nav-menu{list-style:none;display:flex;gap:15px}
+        .nav-menu li a{color:#e0e0e0;text-decoration:none;font-size:1em;padding:8px 12px;border-radius:5px;transition:background .3s,color .3s}
+        .nav-menu li a:hover{background:#d4af37;color:#0d1b2a}
+        .nav-toggle{display:none}
+
+        .intro{text-align:center;margin:80px 0 50px}
         .intro h1{font-size:2.8em;color:#000;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
         .intro p{font-size:1.6em;color:#000}
         .categories{display:grid;grid-template-columns:repeat(5,1fr);gap:25px;margin:50px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -103,21 +107,15 @@
         .floating-btn{position:fixed;bottom:30px;right:30px;background:#02f70e;color:#112030;padding:15px 25px;border-radius:50px;text-decoration:none;font-weight:700;border:1px solid #415a77;will-change:transform,opacity;transition:transform .3s,opacity .3s}
         .floating-btn:hover{transform:scale(1.1)}
         .floating-btn.hidden{opacity:0;pointer-events:none}
-        .floating-menu{position:fixed;top:20px;left:20px;z-index:1000}
-        .menu-toggle{width:60px;height:60px;background:#d4af37;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;will-change:transform,background;transition:background .3s,transform .3s;box-shadow:0 4px 8px rgba(0,0,0,0.2)}
-        .menu-toggle:hover{background:#8fff00;transform:scale(1.1)}
-        .menu-toggle i{font-size:1.5em;color:#0d1b2a}
-        .menu-options{list-style:none;position:absolute;top:70px;left:0;background:rgba(29,41,59,0.95);border-radius:10px;padding:10px;display:none;flex-direction:column;box-shadow:0 4px 8px rgba(0,0,0,0.2);border:1px solid #415a77}
-        .menu-options li{margin:5px 0}
-        .menu-options a{display:flex;align-items:center;padding:10px 15px;color:#e0e0e0;text-decoration:none;font-size:1em;border-radius:5px;white-space:nowrap;will-change:background;transition:background .3s}
-        .menu-options a:hover{background:#d4af37;color:#0d1b2a}
-        .menu-options a i{margin-right:10px;font-size:1.2em}
-        .floating-menu.active .menu-options{display:flex}
         @media (max-width:768px){
+            .nav-container{flex-wrap:wrap}
+            .nav-toggle{display:block;font-size:1.5em;color:#d4af37;cursor:pointer}
+            .nav-menu{flex-direction:column;position:absolute;top:60px;left:0;width:100%;background:rgba(33,35,48,0.95);display:none;padding:10px 0}
+            .nav-menu.active{display:flex}
+            .nav-menu li a{padding:10px 20px}
+            .intro{margin-top:100px}
             .categories,.advantages-grid,.benefits-content,.bonus-cards{grid-template-columns:1fr}
             .categories{overflow-x:auto}
-            header{padding:60px 0}
-            header .slogan{font-size:2em;text-shadow:2px 2px 6px rgba(0,0,0,0.9)}
             .intro h1{font-size:2em}
             .intro p{font-size:1.2em}
             .category-card{height:280px}
@@ -128,9 +126,6 @@
             .footer-slogan{font-size:1em}
             .footer-content h3{font-size:1.2em}
             .testimonial-card{flex:0 0 250px}
-            .menu-toggle{width:50px;height:50px}
-            .menu-options{top:60px}
-            .menu-options a{font-size:.9em;padding:8px 12px}
             .winner-toast{left:10px;right:10px;top:10px;font-size:.9em;max-width:none}
         }
     </style>
@@ -142,10 +137,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-        </header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">ÁGUIA OFICIAL</div>
+            <span class="nav-toggle"><i class="fas fa-bars"></i></span>
+            <ul class="nav-menu">
+                <li><a href="https://api.whatsapp.com/send?phone=5583993110329&text=Ol%C3%A1,%20suporte.%20Preciso%20de%20ajuda!" target="_blank">Falar com Suporte</a></li>
+                <li><a href="https://chat.whatsapp.com/ETB6lwj3NfQ8IP167G0qlf" target="_blank">Comunidade dos Ganhadores</a></li>
+                <li><a href="#" onclick="downloadAndRedirect()">Baixar Aplicativo</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <div class="container">
         <div class="intro">
             <h1>ÁGUIA OFICIAL</h1>
             <p>Magia e diversão em um só lugar!</p>
@@ -442,18 +446,7 @@
 
     <a href="https://app.aguiaoficial.com/pr/XvrHVdt2" class="floating-btn" target="_blank">Cadastre-se Agora</a>
 
-    <div class="floating-menu">
-        <div class="menu-toggle">
-            <i class="fas fa-plus"></i>
-        </div>
-        <ul class="menu-options">
-            <li><a href="https://chat.whatsapp.com/ETB6lwj3NfQ8IP167G0qlf" target="_blank"><i class="fab fa-whatsapp"></i> Comunidade dos Ganhadores</a></li>
-            <li><a href="https://api.whatsapp.com/send?phone=5583993110329&text=Ol%C3%A1,%20suporte.%20Preciso%20de%20ajuda!" target="_blank"><i class="fas fa-headset"></i> Falar com Suporte</a></li>
-            <li><a href="#" onclick="downloadAndRedirect()"><i class="fas fa-gamepad"></i> BAIXAR APP</a></li>
-        </ul>
-    </div>
-
-    <div style="position: absolute; left: -9999px;">
+    <div style="position: absolute; left: -99999px;">
         resultado jogo do bicho palpite jogo do bicho puxada jogo do bicho horários pagantes tigrinho formas de ganhar no cassino 
         técnicas para ganhar no jogo do bicho erome ganhar no jogo do bicho aposta segura dicas jogo do bicho online cassino confiável 
         resultados diários apostas online jogo do bicho ao vivo como jogar jogo do bicho melhores cassinos online estratégias cassino 
@@ -510,7 +503,7 @@
             console.log("Service Worker registrado com sucesso!");
           });
         }
-        </script>        
+    </script>        
 
     <script>
         function downloadAndRedirect() {
@@ -519,35 +512,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const menu = document.querySelector('.floating-menu');
-            const toggle = document.querySelector('.menu-toggle');
-            toggle.addEventListener('click', () => {
-                menu.classList.toggle('active');
-                const icon = toggle.querySelector('i');
-                icon.classList.toggle('fa-plus');
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
                 icon.classList.toggle('fa-times');
             });
-            document.addEventListener('click', (e) => {
-                if (!menu.contains(e.target)) {
-                    menu.classList.remove('active');
-                    const icon = toggle.querySelector('i');
-                    if (icon.classList.contains('fa-times')) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-plus');
-                    }
-                }
-            });
-
-            const header = document.querySelector('header');
-            const headerImages = ['header1.avif', 'header2.png', 'header3.png', 'header4.png'];
-            let currentImageIndex = 0;
-
-            const changeHeaderImage = () => {
-                currentImageIndex = (currentImageIndex + 1) % headerImages.length;
-                header.style.backgroundImage = `url('${headerImages[currentImageIndex]}')`;
-            };
-
-            setInterval(changeHeaderImage, 10000); // Alterna a cada 10 segundos
 
             const debounce = (func, wait) => {
                 let timeout;
@@ -656,3 +629,5 @@
             });
         });
     </script>
+</body>
+</html>
