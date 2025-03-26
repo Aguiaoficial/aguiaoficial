@@ -3,631 +3,553 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Águia Oficial - A melhor plataforma de apostas online no Brasil. Ganhe prêmios incríveis no Cassino, Jogo do Bicho e mais! Cadastre-se agora e transforme sua sorte.">
-    <meta name="keywords" content="Águia Oficial, apostas online, cassino online, jogo do bicho, bônus de apostas, apostas seguras, plataforma de apostas Brasil">
-    <meta name="author" content="Águia Oficial">
-    <meta name="robots" content="index, follow">
-    <title>ÁGUIA OFICIAL - Apostas Online | Ganhe Prêmios Incríveis</title>
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="ÁGUIA OFICIAL - Apostas Online">
-    <meta property="og:description" content="Descubra a Águia Oficial, sua plataforma premium de apostas online. Cadastre-se e aproveite bônus exclusivos no Cassino e Jogo do Bicho!">
-    <meta property="og:image" content="https://aguiaoficial.club/banner.jpg">
-    <meta property="og:url" content="https://aguiaoficial.club">
-    <meta property="og:type" content="website">
-
-    <!-- Pré-conexão para fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
-    <!-- Favicons -->
-    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
-    <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
-    <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png">
-    <link rel="icon" href="android-chrome-192x192.png" type="image/png" sizes="192x192">
-    <link rel="icon" href="android-chrome-512x512.png" type="image/png" sizes="512x512">
-
-    <!-- Estilos CSS -->
+    <title>Site Águia Oficial</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif}
-        body{background:linear-gradient(135deg,#02832d88,#006e37);color:#e0e0e0;line-height:1.6}
-        .container{max-width:1300px;margin:0 auto;padding:25px}
-
-        /* Novo menu fixo semi-transparente */
-        nav{position:fixed;top:0;left:0;width:100%;background:rgba(33,35,48,0.85);z-index:1000;padding:15px 0;border-bottom:1px solid #d4af37}
-        .nav-container{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 25px}
-        .nav-logo{font-size:1.5em;color:#d4af37;font-weight:700;text-transform:uppercase;letter-spacing:1px}
-        .nav-menu{list-style:none;display:flex;gap:15px}
-        .nav-menu li a{color:#e0e0e0;text-decoration:none;font-size:1em;padding:8px 12px;border-radius:5px;transition:background .3s,color .3s}
-        .nav-menu li a:hover{background:#d4af37;color:#0d1b2a}
-        .nav-toggle{display:none}
-
-        .intro{text-align:center;margin:80px 0 50px}
-        .intro h1{font-size:2.8em;color:#000;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
-        .intro p{font-size:1.6em;color:#000}
-        .categories{display:grid;grid-template-columns:repeat(5,1fr);gap:25px;margin:50px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
-        .category-card{background:rgba(33,35,48,0.8);border-radius:10px;padding:0;text-align:center;border:1px solid #415a77;min-width:220px;height:320px;display:flex;flex-direction:column;justify-content:space-between;will-change:transform,border;transition:transform .3s,border .3s}
-        .category-card:hover{transform:translateY(-10px);border:1px solid #d4af37}
-        .category-card img{width:100%;height:160px;object-fit:cover;border-radius:10px 10px 0 0}
-        .category-card .content{padding:15px;flex:1;display:flex;flex-direction:column;justify-content:center}
-        .category-card h2{font-size:1.5em;color:#d4af37;margin-bottom:8px}
-        .category-card p{font-size:1em;color:#e0e0e0;margin:0}
-        .fade-in-section{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
-        .fade-in-section.visible{opacity:1;transform:translateY(0)}
-        .advantages{background:rgba(33,35,48,0.8);padding:50px;border-radius:10px;margin:50px 0;border:1px solid #415a77}
-        .advantages h2{text-align:center;color:#d4af37;margin-bottom:30px;font-size:2em}
-        .advantages-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;max-width:1200px;margin:0 auto}
-        .advantage-item{background:rgba(33,35,48,0.8);border-radius:10px;padding:20px;text-align:center;border:1px solid #415a77;will-change:transform,border;transition:transform .3s,border .3s}
-        .advantage-item:hover{transform:translateY(-5px);border:1px solid #d4af37}
-        .advantage-item i{font-size:2.5em;color:#d4af37;margin-bottom:15px}
-        .advantage-item h3{font-size:1.4em;color:#e0e0e0;margin-bottom:10px}
-        .advantage-item p{font-size:1em;color:#b0b0b0}
-        .benefits{background:rgba(33,35,48,0.8);padding:50px;border-radius:10px;margin:50px 0;border:1px solid #415a77}
-        .benefits h2{text-align:center;color:#d4af37;margin-bottom:20px;font-size:2em}
-        .benefits-content{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:25px}
-        .benefits-list ul{list-style:none}
-        .benefits-list li{margin:15px 0;padding-left:30px;position:relative}
-        .benefits-list li:before{content:"✔";color:#d4af37;position:absolute;left:0;font-size:1.2em}
-        .bonus-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-        .bonus-card{border:2px solid #d4af37;border-radius:10px;padding:15px;text-align:center;background:none;will-change:transform;transition:transform .3s}
-        .bonus-card:hover{transform:scale(1.05)}
-        .bonus-card .percentage{font-size:2.5em;color:#d4af37;font-weight:700;margin-bottom:10px;display:block}
-        .bonus-card p{font-size:1em;color:#e0e0e0;margin:5px 0}
-        .benefits-note{text-align:center;font-size:.9em;color:#b0b0b0;margin-top:20px}
-        .bet-types{background:rgba(33,35,48,0.8);padding:50px;border-radius:10px;margin:50px 0;border:1px solid #415a77}
-        .bet-types h2{text-align:center;color:#d4af37;margin-bottom:20px;font-size:2em}
-        .bet-types p{text-align:center;font-size:1em;color:#b0b0b0;margin-bottom:20px}
-        .bet-table{width:100%;max-width:800px;margin:0 auto;border-collapse:collapse}
-        .bet-table th,.bet-table td{padding:12px;text-align:left;border-bottom:1px solid rgba(65,90,119,0.5)}
-        .bet-table th{background:rgba(33,35,48,0.8);color:#d4af37;font-weight:700}
-        .bet-table td{color:#e0e0e0}
-        .bet-table td:nth-child(2){text-align:right;color:#d4af37;font-weight:700}
-        .footer-cta{text-align:center;margin:50px 0}
-        .footer-cta-container{border:2px solid #d4af37;padding:25px;border-radius:10px;background:none}
-        .footer-btn{display:inline-block;background:#00ff4c;color:#0d1c2c;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:700;will-change:transform;transition:transform .3s}
-        .footer-btn:hover{transform:scale(1.1)}
-        .footer-slogan{font-size:1.3em;color:#00ff4c;margin:20px 0}
-        .footer-content{background:rgba(33,35,48,0.8);padding:25px;border-radius:10px;margin:25px 0;border:1px solid #415a77}
-        .footer-content h3{text-align:center;color:#d4af37;margin-bottom:20px;font-size:1.6em;text-transform:uppercase;letter-spacing:1px}
-        .testimonials-wrapper{position:relative;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-        .testimonials{display:flex}
-        .testimonial-card{flex:0 0 300px;background:rgba(33,35,48,0.8);border-radius:10px;padding:20px;text-align:center;border:1px solid #415a77;margin-right:20px;scroll-snap-align:start;will-change:border;transition:border .3s}
-        .testimonial-card:hover{border:1px solid #d4af37}
-        .testimonial-card p{font-size:1em;color:#e0e0e0;margin-bottom:10px}
-        .testimonial-card span{display:block;font-style:italic;color:#b0b0b0;font-size:.9em}
-        .carousel-dots{text-align:center;margin-top:15px}
-        .carousel-dot{display:inline-block;width:10px;height:10px;background:#b0b0b0;border-radius:50%;margin:0 5px;cursor:pointer;transition:background .3s}
-        .carousel-dot.active{background:#d4bc37}
-        .winner-toast{position:fixed;top:20px;left:20px;background:#28a745;color:#fff;padding:10px 20px;border-radius:8px;font-size:1em;opacity:0;transform:translateY(-20px);transition:opacity .5s ease,transform .5s ease;z-index:1000;max-width:300px;box-shadow:0 4px 8px rgba(0,0,0,0.2)}
-        .winner-toast.visible{opacity:1;transform:translateY(0)}
-        footer{background:rgba(33,35,48,0.8);padding:20px;text-align:center;border-top:1px solid #415a77;margin-top:50px}
-        footer p{font-size:.9em;color:#b0b0b0}
-        footer a{color:#d4af37;text-decoration:none}
-        footer a:hover{text-decoration:underline}
-        .floating-btn{position:fixed;bottom:30px;right:30px;background:#02f70e;color:#112030;padding:15px 25px;border-radius:50px;text-decoration:none;font-weight:700;border:1px solid #415a77;will-change:transform,opacity;transition:transform .3s,opacity .3s}
-        .floating-btn:hover{transform:scale(1.1)}
-        .floating-btn.hidden{opacity:0;pointer-events:none}
-        @media (max-width:768px){
-            .nav-container{flex-wrap:wrap}
-            .nav-toggle{display:block;font-size:1.5em;color:#d4af37;cursor:pointer}
-            .nav-menu{flex-direction:column;position:absolute;top:60px;left:0;width:100%;background:rgba(33,35,48,0.95);display:none;padding:10px 0}
-            .nav-menu.active{display:flex}
-            .nav-menu li a{padding:10px 20px}
-            .intro{margin-top:100px}
-            .categories,.advantages-grid,.benefits-content,.bonus-cards{grid-template-columns:1fr}
-            .categories{overflow-x:auto}
-            .intro h1{font-size:2em}
-            .intro p{font-size:1.2em}
-            .category-card{height:280px}
-            .category-card img{height:140px}
-            .bet-table th,.bet-table td{font-size:.9em;padding:8px}
-            .footer-cta-container{padding:15px}
-            .footer-btn{padding:12px 20px}
-            .footer-slogan{font-size:1em}
-            .footer-content h3{font-size:1.2em}
-            .testimonial-card{flex:0 0 250px}
-            .winner-toast{left:10px;right:10px;top:10px;font-size:.9em;max-width:none}
-        }
-    </style>
-
-    <!-- Fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" defer></script>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">ÁGUIA OFICIAL</div>
-            <span class="nav-toggle"><i class="fas fa-bars"></i></span>
-            <ul class="nav-menu">
-                <li><a href="https://api.whatsapp.com/send?phone=5583993110329&text=Ol%C3%A1,%20suporte.%20Preciso%20de%20ajuda!" target="_blank">Falar com Suporte</a></li>
-                <li><a href="https://chat.whatsapp.com/ETB6lwj3NfQ8IP167G0qlf" target="_blank">Comunidade dos Ganhadores</a></li>
-                <li><a href="#" onclick="downloadAndRedirect()">Baixar Aplicativo</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="intro">
-            <h1>ÁGUIA OFICIAL</h1>
-            <p>Magia e diversão em um só lugar!</p>
-        </div>
-
-        <section class="categories">
-            <div class="category-card">
-                <a href="https://aguiaoficial.club/Cassino/" target="_blank" style="text-decoration:none;color:inherit">
-                    <img src="cassino.avif" alt="Cassino" loading="lazy">
-                    <div class="content">
-                        <h2>Cassino</h2>
-                        <p>Diversos jogos com prêmios sensacionais!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="category-card">
-                <img src="bingo.avif" alt="Bingo">
-                <div class="content">
-                    <h2>Bingo</h2>
-                    <p>A adrenalina de gritar bingo ao vivo!</p>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="futebol.avif" alt="Futebol">
-                <div class="content">
-                    <h2>Futebol</h2>
-                    <p>Aposte no time que te faz vibrar e ganhe prêmios!</p>
-                </div>
-            </div>
-            <div class="category-card">
-                <a href="https://aguiaoficial.club/Jogo do bicho/" target="_blank" style="text-decoration:none;color:inherit">
-                    <img src="jogo-do-bicho.avif" alt="Jogo do Bicho">
-                    <div class="content">
-                        <h2>Jogo do Bicho</h2>
-                        <p>Faça sua aposta em qualquer loteria usando apenas o celular!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="category-card">
-                <img src="fazendinha.png" alt="Fazendinha" loading="lazy">
-                <div class="content">
-                    <h2>Fazendinha</h2>
-                    <p>Aposte e divirta-se com um toque rural!</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="advantages fade-in-section">
-            <h2>Vantagens da Banca Online</h2>
-            <div class="advantages-grid">
-                <div class="advantage-item">
-                    <i class="fas fa-bolt"></i>
-                    <h3 style="color: #d4af37;">Rapidez </h3>
-                    <p>Recarga simples e rápida. Saques em poucos segundos e seguro!</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3 style="color: #d4af37;">Segurança</h3>
-                    <p>Não são necessários dados pessoais. Apenas será necessário o número de telefone e o nome.</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3 style="color: #d4af37;">Praticidade</h3>
-                    <p>Cadastro fácil e sem dificuldades. Em poucos minutos seu jogo está feito!</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-handshake"></i>
-                    <h3 style="color: #d4af37;">Confiabilidade</h3>
-                    <p>Estamos comprometidos em oferecer a melhor experiência ao cliente, com transparência e suporte dedicado.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="benefits fade-in-section">
-            <h2>Vantagens de se cadastrar</h2>
-            <div class="benefits-content">
-                <div class="bonus-cards">
-                    <div class="bonus-card">
-                        <span class="percentage">30%</span>
-                        <p>Bônus de boas-vindas</p>
-                        <p>Para novos clientes (primeira recarga)</p>
-                    </div>
-                    <div class="bonus-card">
-                        <span class="percentage">10%</span>
-                        <p>Para todas as recargas subsequentes</p>
-                        <p>(Primeira do dia)</p>
-                    </div>
-                    <div class="bonus-card">
-                        <span class="percentage">15%</span>
-                        <p>Para os dias de sorteio da Federal</p>
-                    </div>
-                </div>
-                <div class="benefits-list">
-                    <ul>
-                        <li>Bônus exclusivos para novos usuários</li>
-                        <li>Depósitos e saques rápidos e seguros</li>
-                        <li>Suporte 24 horas</li>
-                        <li>Aplicativo moderno e fácil de usar</li>
-                        <li>Promoções diárias e milhar de brinde</li>
-                    </ul>
-                </div>
-                <p class="benefits-note">*Os bônus acima são aplicáveis à categoria Loteria.</p>
-            </div>
-        </section>
-
-        <section class="bet-types fade-in-section">
-            <h2>Tipos de Aposta e Valores da Cotação</h2>
-            <p>Estas cotações são referentes à modalidade Jogo do Bicho, na categoria Loteria.</p>
-            <table class="bet-table">
-                <thead>
-                    <tr>
-                        <th>Tipo de Aposta</th>
-                        <th>Valor da Cotação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Unidade</td><td>R$ 8,00</td></tr>
-                    <tr><td>Grupo</td><td>R$ 20,00</td></tr>
-                    <tr><td>Dezena</td><td>R$ 80,00</td></tr>
-                    <tr><td>Centena</td><td>R$ 800,00</td></tr>
-                    <tr><td>Milhar</td><td>R$ 8.000,00</td></tr>
-                    <tr><td>Duque GP</td><td>R$ 180,00</td></tr>
-                    <tr><td>Terno GP</td><td>R$ 1.500,00</td></tr>
-                    <tr><td>Quadra GP</td><td>R$ 1.000,00</td></tr>
-                    <tr><td>Quina GP (8/5)</td><td>R$ 1.000,00</td></tr>
-                    <tr><td>Sena GP (10/6)</td><td>R$ 1.000,00</td></tr>
-                    <tr><td>Duque Dez</td><td>R$ 300,00</td></tr>
-                    <tr><td>Terno Dez Seco</td><td>R$ 10.000,00</td></tr>
-                    <tr><td>Terno Dez</td><td>R$ 5.000,00</td></tr>
-                    <tr><td>Palpitação</td><td>R$ 800,00</td></tr>
-                    <tr><td>Passe Vai</td><td>R$ 90,00</td></tr>
-                    <tr><td>Passe Vai Vem</td><td>R$ 45,00</td></tr>
-                </tbody>
-            </table>
-        </section>
-
-        <div class="footer-cta">
-            <div class="footer-cta-container fade-in-section">
-                <p class="footer-banner-slogan">Cadastre-se agora e tenha a sorte nas suas mãos!</p>
-                <a href="#" class="footer-btn" onclick="downloadAndRedirect()">Cadastre-se Agora</a>
-                <p class="footer-slogan">Cadastre-se agora e transforme sua sorte em diversão!</p>
-            </div>
-        </div>
-
-        <div class="footer-content">
-            <h3>O que nossos clientes dizem</h3>
-            <div class="testimonials-wrapper">
-                <div class="testimonials" id="testimonials">
-                    <div class="testimonial-card">
-                        <p>"A Águia Oficial é top! Fiz o cadastro rapidinho e já peguei o bônus de 30%. Recomendo demais!"</p>
-                        <span>- Ricardo Melo</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Nunca vi um site tão fácil de usar, saquei meu prêmio em minutos. É outro nível!"</p>
-                        <span>- Júlio Pereira</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O suporte me ajudou de madrugada, resolveram tudo na hora. Águia Oficial é confiável mesmo!"</p>
-                        <span>- Pedro</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Adoro o Jogo do Bicho aqui, as cotações são ótimas e o app é muito prático."</p>
-                        <span>- Souza</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Fiz uma recarga e caiu na hora, sem enrolação. Melhor plataforma que já usei!"</p>
-                        <span>- Lucas</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O bônus de 15% nos dias da Federal é um diferencial, sempre aproveito!"</p>
-                        <span>- Ana Júlia</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Primeira vez que aposto online e adorei, tudo simples e direto. Águia Oficial é show!"</p>
-                        <span>- Rafael</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Saquei R$ 800 em menos de 5 minutos, impressionante!"</p>
-                        <span>- Katarine Lima</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O app é leve e rápido, consigo jogar de qualquer lugar. Nota 10!"</p>
-                        <span>- Ricardo Oliveira</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Ganhar no Jogo do Bicho ficou mais fácil com essa plataforma, amei!"</p>
-                        <span>- Beatriz Damasceno</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O bônus de boas-vindas me deu um gás pra começar, vale cada centavo!"</p>
-                        <span>- Thiago Rocha</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Nunca tive problema, o suporte é 24h e sempre atencioso. Recomendo!"</p>
-                        <span>- Fernanda Dias</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"A interface é simples, até minha mãe conseguiu usar. Águia Oficial arrasa!"</p>
-                        <span>- Matheus</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Fiz um depósito e já tava jogando em 2 minutos, muito prático!"</p>
-                        <span>- Larissa</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"As odds são boas e o saque é rápido, não tem como não gostar!"</p>
-                        <span>- Diego Martins</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Primeira vez que vejo um site de apostas tão honesto e rápido. Parabéns!"</p>
-                        <span>- Sofia Ribeiro</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O bônus diário de 10% é perfeito pra quem joga todo dia como eu!"</p>
-                        <span>- Eduardo Costa</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Águia Oficial é viciante, mas no bom sentido! Sempre volto pra jogar."</p>
-                        <span>- Camila Fonseca</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Saquei meu prêmio pelo Pix e caiu na hora, sensacional!"</p>
-                        <span>- Bruno dos Santos</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O app funciona direitinho até com internet ruim, adorei isso!"</p>
-                        <span>- Patrícia Lima</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Fiz uma aposta no Jogo do Bicho e ganhei fácil, plataforma top!"</p>
-                        <span>- André Silveira</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O suporte me tirou uma dúvida em minutos, atendimento de primeira!"</p>
-                        <span>- Patrícia Almeida</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O bônus de 30% me deu uma força pra começar, recomendo pra todo mundo!"</p>
-                        <span>- Gabriel Souza</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Nunca imaginei que apostar online fosse tão tranquilo, Águia Oficial é demais!"</p>
-                        <span>- Letícia Costa</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Saque rápido e sem burocracia, melhor site que já usei!"</p>
-                        <span>- Marcelo Oliveira</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O design é bonito e fácil de mexer, até quem não entende pega rápido."</p>
-                        <span>- Vanessa Santos</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Ganhar no Jogo do Bicho aqui é outra vibe, plataforma nota mil!"</p>
-                        <span>- Ricardo Mendes</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O bônus da Federal me deu sorte extra, ganhei na primeira tentativa!"</p>
-                        <span>- Aline Ferreira</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Tudo funciona direitinho, desde o cadastro até o saque. Recomendo!"</p>
-                        <span>- Felipe Rocha</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O app é perfeito pra jogar na rua, rápido e prático!"</p>
-                        <span>- Tatiana Dias</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Fiz um depósito pequeno e já consegui lucrar, Águia Oficial é show!"</p>
-                        <span>- Vinícius Correia</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"O suporte 24h é um diferencial, sempre que precisei me atenderam rápido."</p>
-                        <span>- Laura Gomes</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Adorei os bônus e a facilidade de usar, não largo mais essa plataforma!"</p>
-                        <span>- Hugo Martins</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Saquei R$ 1.500 e caiu na minha conta em poucos minutos, incrível!"</p>
-                        <span>- Renata Ribeiro</span>
-                    </div>
-                </div>
-                <div class="carousel-dots" id="carousel-dots"></div>
-            </div>
-        </div>
-
-        <footer>
-            <p>© 2025 Águia Oficial. Todos os direitos reservados. <a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a></p>
-        </footer>
-    </div>
-
-    <a href="https://app.aguiaoficial.com/pr/XvrHVdt2" class="floating-btn" target="_blank">Cadastre-se Agora</a>
-
-    <div style="position: absolute; left: -99999px;">
-        resultado jogo do bicho palpite jogo do bicho puxada jogo do bicho horários pagantes tigrinho formas de ganhar no cassino 
-        técnicas para ganhar no jogo do bicho erome ganhar no jogo do bicho aposta segura dicas jogo do bicho online cassino confiável 
-        resultados diários apostas online jogo do bicho ao vivo como jogar jogo do bicho melhores cassinos online estratégias cassino 
-        ganhar dinheiro cassino resultados jogo do bicho hoje palpites diários tigrinho horarios apostas jogo do bicho cassino ao vivo 
-        dicas para apostas seguras ganhar no tigrinho puxadas do bicho tabela jogo do bicho como apostar no cassino sites de apostas confiáveis 
-        jogo do bicho resultados ontem técnicas apostas online cassino seguro online horários pagantes cassino palpites jogo do bicho grátis 
-        ganhar dinheiro jogo do bicho apostas rápidas cassino estratégias jogo do bicho melhor site jogo do bicho cassino com bônus 
-        resultados jogo do bicho ao vivo dicas tigrinho online apostar jogo do bicho online cassino confiável Brasil jogo do bicho dicas diárias 
-        ganhar prêmios cassino puxada do bicho hoje como ganhar no jogo do bicho fácil horários pagantes jogo do bicho apostas seguras cassino 
-        técnicas vencedoras cassino resultado do bicho agora palpites certeiros jogo do bicho cassino online grátis jogo do bicho federal 
-        apostas cassino Brasil ganhar no cassino online dicas para jogo do bicho melhores horários tigrinho resultado jogo do bicho agora 
-        como ganhar dinheiro no cassino palpites jogo do bicho hoje apostas online seguras cassino ao vivo Brasil jogo do bicho resultados diários 
-        técnicas para cassino online ganhar no jogo do bicho fácil dicas apostas cassino melhor plataforma apostas puxada jogo do bicho hoje 
-        horários pagantes cassino online jogo do bicho online ao vivo cassino com bônus grátis apostas jogo do bicho seguras 
-        resultados jogo do bicho federal dicas para ganhar no tigrinho como apostar jogo do bicho online cassino confiável 2025 
-        jogo do bicho palpites diários ganhar dinheiro apostas online estratégias vencedoras jogo do bicho cassino online seguro 
-        resultado jogo do bicho ao vivo dicas cassino ao vivo apostas rápidas jogo do bicho melhor site cassino online 
-        palpites jogo do bicho federal ganhar no cassino fácil técnicas jogo do bicho online cassino Brasil confiável 
-        jogo do bicho resultados atualizados apostas online cassino grátis horários pagantes tigrinho 2025 dicas para apostar no cassino 
-        futebol apostas online palpites futebol apostar em jogos de futebol melhores sites apostas futebol como ganhar apostando em futebol 
-        apostas futebol ao vivo dicas apostas futebol palpites futebol hoje apostas seguras futebol odds futebol online 
-        ganhar dinheiro apostas futebol melhores palpites futebol apostas futebol Brasil jogos de futebol apostas cassino e futebol 
-        apostas em futebol dicas futebol ao vivo como apostar em futebol online sites confiáveis apostas futebol apostas futebol grátis 
-        bingo online como jogar bingo ganhar no bingo apostas bingo ao vivo dicas para bingo online melhores sites bingo 
-        bingo com bônus apostar em bingo bingo online grátis ganhar dinheiro bingo estratégias bingo online bingo ao vivo Brasil 
-        fazendinha apostas online jogo fazendinha como ganhar na fazendinha dicas fazendinha online apostas seguras fazendinha 
-        melhores horários fazendinha ganhar dinheiro fazendinha apostas fazendinha ao vivo fazendinha online grátis estratégias fazendinha 
-        apostas esportivas online melhores sites apostas esportivas como ganhar apostas esportivas dicas apostas esportivas 
-        apostas esportivas ao vivo palpites esportes online apostas seguras esportes ganhar dinheiro apostas esportivas 
-        cassino e esportes apostas esportivas Brasil apostas em esportes grátis melhores odds apostas esportivas 
-        loteria online apostas loteria como ganhar na loteria palpites loteria online dicas loteria Brasil apostas seguras loteria 
-        ganhar dinheiro loteria online melhores sites loteria loteria ao vivo resultados loteria hoje apostas loteria grátis 
-        tigrinho jogo online ganhar no tigrinho fácil dicas tigrinho ao vivo apostas tigrinho seguras melhores horários tigrinho 
-        resultado tigrinho hoje estratégias tigrinho online tigrinho com bônus apostar no tigrinho grátis tigrinho Brasil 2025 
-        apostas online Brasil melhores plataformas apostas ganhar dinheiro online apostas apostas seguras 2025 cassino e apostas online 
-        jogos de azar online como ganhar em jogos de azar dicas jogos de azar apostas jogos de azar Brasil melhores sites jogos de azar Águia Oficial, 
-        Apostas Águia Oficial, Águia Oficial apostas online, Banca Águia Oficial, Águia Oficial apostas esportivas, Águia Oficial cassino, 
-        Jogos Águia Oficial, Águia Oficial apostas ao vivo, Águia Oficial futebol, Águia Oficial bônus, Apostas seguras Águia Oficial, 
-        Águia Oficial site oficial, Águia Oficial login, Águia Oficial cadastro, Águia Oficial promoções, Águia Oficial confiável, 
-        Águia Oficial apostas grátis, Águia Oficial odds, Águia Oficial depósito, Águia Oficial saque rápido, Águia Oficial jogos online, 
-        Águia Oficial cassino ao vivo, Águia Oficial apostas em esportes, Águia Oficial melhores apostas, Águia Oficial plataforma, 
-        Águia Oficial apostas seguras, Águia Oficial Brasil, Águia Oficial apostas mobile, Águia Oficial aplicativo, Águia Oficial ganhos, 
-        Águia Oficial apostas em tempo real, Águia Oficial suporte, Águia Oficial pagamentos, Águia Oficial apostas de futebol, 
-        Águia Oficial apostas UFC, Águia Oficial apostas basquete, Águia Oficial apostas tênis, Águia Oficial roleta, 
-        Águia Oficial blackjack, Águia Oficial slots, Águia Oficial jackpot, Águia Oficial apostas virtuais, Águia Oficial experiência, 
-        Águia Oficial confiabilidade, Águia Oficial registro, Águia Oficial apostas e-sports, Águia Oficial apostas CS:GO, 
-        Águia Oficial apostas LOL, Águia Oficial apostas DOTA, Águia Oficial dicas de apostas, Águia Oficial estratégias, 
-        Águia Oficial apostas vencedoras, Águia Oficial lucros
-    </div>
-
-    <script>
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("/sw.js").then(() => {
-            console.log("Service Worker registrado com sucesso!");
-          });
-        }
-    </script>        
-
-    <script>
-        function downloadAndRedirect() {
-            window.open("https://github.com/Aguiaoficial/aguiaoficial/raw/main/aguiaoficial.apk", "_blank");
-            setTimeout(() => window.location.href = "https://app.aguiaoficial.com/pr/XvrHVdt2", 1000);
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            position: relative;
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                const icon = navToggle.querySelector('i');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            });
+        .floating-menu {
+            position: fixed;
+            left: 15px;
+            top: 15px;
+            background: rgba(34, 139, 34, 0.9);
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            width: 150px;
+            transition: all 0.3s ease;
+        }
 
-            const debounce = (func, wait) => {
-                let timeout;
-                return (...args) => {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(() => func(...args), wait);
-                };
-            };
+        .floating-menu:hover {
+            background: rgba(34, 139, 34, 1);
+        }
 
-            const isInViewport = (el) => {
-                const rect = el.getBoundingClientRect();
-                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                return (
-                    rect.top <= windowHeight * 0.9 &&
-                    rect.bottom >= 0
-                );
-            };
+        .menu-logo {
+            display: block;
+            max-width: 80px;
+            margin: 0 auto 10px auto;
+        }
 
-            const checkFadeIn = () => {
-                document.querySelectorAll('.fade-in-section').forEach(section => {
-                    if (isInViewport(section) && !section.classList.contains('visible')) {
-                        section.classList.add('visible');
-                    }
-                });
-            };
+        .menu-button {
+            background: linear-gradient(45deg, #32cd32, #228b22);
+            border: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 15px;
+            cursor: move;
+            border-radius: 6px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.2s;
+        }
 
-            const toggleFloatingButton = debounce(() => {
-                const footerBtn = document.querySelector('.footer-btn');
-                const floatingBtn = document.querySelector('.floating-btn');
-                const rect = footerBtn.getBoundingClientRect();
-                if (rect.top >= 0 && rect.top < window.innerHeight) {
-                    floatingBtn.classList.add('hidden');
-                } else {
-                    floatingBtn.classList.remove('hidden');
-                }
-            }, 50);
+        .menu-button:hover {
+            transform: scale(1.03);
+        }
 
-            const testimonials = document.getElementById('testimonials');
-            const dotsContainer = document.getElementById('carousel-dots');
-            const cardWidth = 320;
-            const totalCards = testimonials.children.length;
-            const cardsPerView = 3;
-            const totalSlides = Math.ceil(totalCards / cardsPerView);
+        .menu-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: rgba(50, 205, 50, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 150px;
+            color: white;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
 
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('span');
-                dot.classList.add('carousel-dot');
-                if (i === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    testimonials.scrollTo({ left: i * cardWidth * cardsPerView, behavior: 'smooth' });
-                });
-                dotsContainer.appendChild(dot);
+        .menu-content button, .menu-content a {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: linear-gradient(45deg, #32cd32, #228b22);
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .menu-content button:hover, .menu-content a:hover {
+            transform: scale(1.03);
+        }
+
+        .floating-menu:hover .menu-content {
+            display: block;
+        }
+
+        .bottom-button-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .bottom-button {
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+            position: relative; /* Para posicionar a imagem em relação ao botão */
+        }
+
+        .bottom-button:hover {
+            transform: scale(1.1);
+        }
+
+        .bottom-button img {
+            height: 100px; /* Imagem maior */
+            position: absolute;
+            left: -30px; /* Colada ao lado esquerdo do botão */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .palpite-section {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(50, 205, 50, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .banca-button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-size: 14px;
+        }
+
+        .banca-button:hover {
+            transform: scale(1.03);
+        }
+
+        .palpite-display {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            width: 300px;
+            text-align: center;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .palpite-display h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .palpite-button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background: linear-gradient(45deg, #27ae60, #219653);
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-size: 14px;
+        }
+
+        .palpite-button:hover {
+            transform: scale(1.05);
+        }
+
+        .close-button {
+            background: #95a5a6;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .horarios-content {
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 5px;
+            border-radius: 6px;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px 0;
+            text-transform: uppercase;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 768px) {
+            .floating-menu {
+                width: 120px;
+                left: 10px;
+                top: 10px;
+                padding: 8px;
             }
 
-            testimonials.addEventListener('scroll', debounce(() => {
-                const slideIndex = Math.round(testimonials.scrollLeft / (cardWidth * cardsPerView));
-                document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-                    dot.classList.toggle('active', i === slideIndex);
+            .menu-logo {
+                max-width: 60px;
+            }
+
+            .menu-button {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+
+            .menu-content {
+                min-width: 120px;
+                padding: 8px;
+            }
+
+            .menu-content button, .menu-content a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .banca-button {
+                font-size: 12px;
+                padding: 6px;
+            }
+
+            .palpite-display {
+                width: 250px;
+                padding: 15px;
+            }
+
+            .palpite-display h3 {
+                font-size: 16px;
+            }
+
+            .palpite-button, .close-button {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .bottom-button {
+                font-size: 16px;
+                padding: 10px 30px;
+            }
+
+            .bottom-button img {
+                height: 100px; /* Imagem maior ajustada para celular */
+                left: -30px; /* Colada ao botão em celular */
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://app.aguiaoficial.com/pr/XvrHVdt2"></iframe>
+
+    <div class="floating-menu" id="draggableMenu">
+        <img src="logo.png" alt="Logo" class="menu-logo">
+        <button class="menu-button" id="dragHandle">☰ Menu</button>
+        <div class="menu-content" id="menuContent">
+            <div id="palpitesSection">
+                <button onclick="showBancas()">🎲 PALPITES</button>
+                <div class="palpite-section" id="bancasList">
+                    <button class="banca-button" onclick="showPalpiteOptions('LOOK/GO')">LOOK/GO</button>
+                    <button class="banca-button" onclick="showPalpiteOptions('PT-RIO')">PT-RIO</button>
+                    <button class="banca-button" onclick="showPalpiteOptions('NACIONAL')">NACIONAL</button>
+                    <button class="banca-button" onclick="showPalpiteOptions('LOTEP')">LOTEP</button>
+                    <button class="banca-button" onclick="showPalpiteOptions('MALUCA/BA')">MALUCA/BA</button>
+                    <button class="banca-button" onclick="showPalpiteOptions('FEDERAL')">FEDERAL</button>
+                </div>
+            </div>
+            <div id="horariosSection">
+                <button onclick="showHorarios()">⏰ HORÁRIOS PAGANTES</button>
+                <div id="horariosContent" class="horarios-content" style="display: none;"></div>
+            </div>
+            <a href="https://api.whatsapp.com/send?phone=5583993110329&text=Ol%C3%A1,%20suporte.%20Preciso%20de%20ajuda!" target="_blank">
+                <button>📞 FALE COMIGO</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="palpite-display" id="palpiteDisplay">
+        <h3 id="bancaTitle">Escolha o Palpite</h3>
+        <button class="palpite-button" onclick="showPalpite(this.parentElement.dataset.banca)">VER PALPITE</button>
+        <button class="close-button" onclick="document.getElementById('palpiteDisplay').style.display='none'">Fechar</button>
+    </div>
+
+    <div class="bottom-button-container">
+        <button class="bottom-button" onclick="window.open('https://app.feiticeira.vip/pr/c4WzxLeV', '_blank')">
+            <img src="feiticeira.png" alt="Feiticeira"> BANCA FEITICEIRAVIP
+        </button>
+    </div>
+
+    <script>
+        const gruposJogoDoBicho = {
+            1: { animal: 'Avestruz', dezenas: ['01', '02', '03', '04'] },
+            2: { animal: 'Águia', dezenas: ['05', '06', '07', '08'] },
+            3: { animal: 'Burro', dezenas: ['09', '10', '11', '12'] },
+            4: { animal: 'Borboleta', dezenas: ['13', '14', '15', '16'] },
+            5: { animal: 'Cachorro', dezenas: ['17', '18', '19', '20'] },
+            6: { animal: 'Cabra', dezenas: ['21', '22', '23', '24'] },
+            7: { animal: 'Carneiro', dezenas: ['25', '26', '27', '28'] },
+            8: { animal: 'Camelo', dezenas: ['29', '30', '31', '32'] },
+            9: { animal: 'Cobra', dezenas: ['33', '34', '35', '36'] },
+            10: { animal: 'Coelho', dezenas: ['37', '38', '39', '40'] },
+            11: { animal: 'Cavalo', dezenas: ['41', '42', '43', '44'] },
+            12: { animal: 'Elefante', dezenas: ['45', '46', '47', '48'] },
+            13: { animal: 'Galo', dezenas: ['49', '50', '51', '52'] },
+            14: { animal: 'Gato', dezenas: ['53', '54', '55', '56'] },
+            15: { animal: 'Jacaré', dezenas: ['57', '58', '59', '60'] },
+            16: { animal: 'Leão', dezenas: ['61', '62', '63', '64'] },
+            17: { animal: 'Macaco', dezenas: ['65', '66', '67', '68'] },
+            18: { animal: 'Porco', dezenas: ['69', '70', '71', '72'] },
+            19: { animal: 'Pavão', dezenas: ['73', '74', '75', '76'] },
+            20: { animal: 'Peru', dezenas: ['77', '78', '79', '80'] },
+            21: { animal: 'Touro', dezenas: ['81', '82', '83', '84'] },
+            22: { animal: 'Tigre', dezenas: ['85', '86', '87', '88'] },
+            23: { animal: 'Urso', dezenas: ['89', '90', '91', '92'] },
+            24: { animal: 'Veado', dezenas: ['93', '94', '95', '96'] },
+            25: { animal: 'Vaca', dezenas: ['97', '98', '99', '00'] }
+        };
+
+        const bancas = ['LOOK/GO', 'PT-RIO', 'NACIONAL', 'LOTEP', 'MALUCA/BA', 'FEDERAL'];
+        let palpites = {};
+        let lastUpdate = localStorage.getItem('lastUpdate') ? parseInt(localStorage.getItem('lastUpdate')) : new Date().getTime();
+
+        const horariosPagantes = {
+            8: ['Fortune Tiger', 'Aviator'],
+            10: ['Aviator', 'Mines'],
+            12: ['Roleta'],
+            13: ['Mines', 'Crash'],
+            15: ['Roleta', 'Bacará'],
+            17: ['Bacará', 'Tigrinho'],
+            19: ['Tigrinho', 'Slots'],
+            21: ['Crash', 'Fortune Tiger'],
+            23: ['Slots', 'Aviator']
+        };
+
+        function gerarPalpite() {
+            const palpitesGerados = [];
+            for (let i = 0; i < 10; i++) {
+                const grupo = Math.floor(Math.random() * 25) + 1;
+                const dezena = gruposJogoDoBicho[grupo].dezenas[Math.floor(Math.random() * 4)];
+                const milhar = Math.floor(Math.random() * 90 + 10).toString() + dezena;
+                palpitesGerados.push({ animal: gruposJogoDoBicho[grupo].animal, milhar: milhar });
+            }
+            return palpitesGerados;
+        }
+
+        function initializePalpites() {
+            const now = new Date();
+            const currentTime = now.getTime();
+
+            const updateTimes = [
+                new Date(now.getFullYear(), now.getMonth(), now.getDate(), 7, 0, 0).getTime(),
+                new Date(now.getFullYear(), now.getMonth(), now.getDate(), 13, 0, 0).getTime(),
+                new Date(now.getFullYear(), now.getMonth(), now.getDate(), 18, 0, 0).getTime()
+            ];
+
+            let shouldUpdate = false;
+            if (!localStorage.getItem('palpites') || currentTime - lastUpdate > 24 * 60 * 60 * 1000) {
+                shouldUpdate = true;
+            } else {
+                for (let time of updateTimes) {
+                    if (currentTime >= time && lastUpdate < time) {
+                        shouldUpdate = true;
+                        break;
+                    }
+                }
+            }
+
+            if (shouldUpdate) {
+                palpites = {};
+                bancas.forEach(banca => {
+                    palpites[banca] = gerarPalpite();
                 });
-            }, 50));
+                localStorage.setItem('palpites', JSON.stringify(palpites));
+                localStorage.setItem('lastUpdate', currentTime);
+                lastUpdate = currentTime;
+            } else {
+                palpites = JSON.parse(localStorage.getItem('palpites'));
+            }
+        }
 
-            const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Julia', /* ... */ 'Zuleide']; // Substitua pela lista completa
-            const surnames = ['Silva', 'Costa', 'Almeida', 'Souza', 'Ferreira', /* ... */ 'Zanatta']; // Substitua pela lista completa
-            const modalities = ['Cassino', 'Jogo do Bicho'];
-            const usedNames = new Set();
+        function showBancas() {
+            const bancasList = document.getElementById('bancasList');
+            bancasList.style.display = bancasList.style.display === 'block' ? 'none' : 'block';
+        }
 
-            const getRandomName = () => {
-                let fullName;
-                do {
-                    const name = names[Math.floor(Math.random() * names.length)];
-                    const surname = surnames[Math.floor(Math.random() * surnames.length)];
-                    fullName = `${name} ${surname}`;
-                } while (usedNames.has(fullName) && usedNames.size < names.length * surnames.length);
-                usedNames.add(fullName);
-                return fullName;
-            };
+        function showPalpiteOptions(banca) {
+            const palpiteDisplay = document.getElementById('palpiteDisplay');
+            palpiteDisplay.dataset.banca = banca;
+            document.getElementById('bancaTitle').textContent = `Palpite para ${banca}`;
+            palpiteDisplay.style.display = 'block';
+            document.getElementById('bancasList').style.display = 'none';
+        }
 
-            const getRandomPrize = () => Math.floor(Math.random() * (40000 - 150 + 1)) + 150;
-            const getRandomInterval = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+        function showPalpite(banca) {
+            initializePalpites();
+            if (!palpites[banca] || !Array.isArray(palpites[banca])) {
+                palpites[banca] = gerarPalpite();
+                localStorage.setItem('palpites', JSON.stringify(palpites));
+            }
 
-            const showWinnerToast = () => {
-                const toast = document.createElement('div');
-                toast.classList.add('winner-toast');
-                const winnerName = getRandomName();
-                const prize = getRandomPrize().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                const modality = modalities[Math.floor(Math.random() * modalities.length)];
-                toast.textContent = `${winnerName} ganhou ${prize} no ${modality}!`;
-                document.body.appendChild(toast);
+            const palpiteLista = palpites[banca];
+            const now = new Date();
+            let nextUpdate;
+            if (now.getHours() < 7 || (now.getHours() === 7 && now.getMinutes() < 0)) {
+                nextUpdate = '07:00';
+            } else if (now.getHours() < 13 || (now.getHours() === 13 && now.getMinutes() < 0)) {
+                nextUpdate = '13:00';
+            } else if (now.getHours() < 18 || (now.getHours() === 18 && now.getMinutes() < 0)) {
+                nextUpdate = '18:00';
+            } else {
+                nextUpdate = '07:00 (amanhã)';
+            }
 
-                setTimeout(() => toast.classList.add('visible'), 100);
-                setTimeout(() => {
-                    toast.classList.remove('visible');
-                    setTimeout(() => toast.remove(), 500);
-                }, 5000);
-
-                setTimeout(showWinnerToast, getRandomInterval(10000, 300000));
-            };
-
-            checkFadeIn();
-            window.addEventListener('scroll', debounce(checkFadeIn, 50));
-            window.addEventListener('scroll', toggleFloatingButton);
-            window.addEventListener('load', () => {
-                checkFadeIn();
-                toggleFloatingButton();
-                showWinnerToast();
+            let mensagem = `Palpites ${banca}:\n`;
+            palpiteLista.forEach((palpite, index) => {
+                mensagem += `${index + 1}. ${palpite.animal} - ${palpite.milhar}\n`;
             });
-        });
+            mensagem += `Válido até ${nextUpdate}`;
+            alert(mensagem);
+            document.getElementById('palpiteDisplay').style.display = 'none';
+        }
+
+        function showHorarios() {
+            const horariosContent = document.getElementById('horariosContent');
+            horariosContent.style.display = horariosContent.style.display === 'none' ? 'block' : 'none';
+            
+            const now = new Date();
+            const currentHour = now.getHours();
+            horariosContent.innerHTML = '';
+
+            Object.keys(horariosPagantes).forEach(hour => {
+                const startHour = parseInt(hour);
+                const endHour = startHour + 1;
+                if (currentHour >= startHour && currentHour < endHour) {
+                    horariosPagantes[hour].forEach(jogo => {
+                        const p = document.createElement('p');
+                        p.className = 'blink';
+                        p.textContent = `PAGANDO ${jogo.toUpperCase()}`;
+                        horariosContent.appendChild(p);
+                    });
+                }
+            });
+
+            if (horariosContent.innerHTML === '') {
+                const p = document.createElement('p');
+                p.textContent = 'Nenhum jogo pagando agora.';
+                horariosContent.appendChild(p);
+            }
+        }
+
+        const draggableMenu = document.getElementById('draggableMenu');
+        const dragHandle = document.getElementById('dragHandle');
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+
+        dragHandle.addEventListener('mousedown', startDragging);
+        dragHandle.addEventListener('touchstart', startDraggingTouch);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', dragTouch);
+        document.addEventListener('mouseup', stopDragging);
+        document.addEventListener('touchend', stopDragging);
+
+        function startDragging(e) {
+            initialX = e.clientX - currentX;
+            initialY = e.clientY - currentY;
+            isDragging = true;
+        }
+
+        function startDraggingTouch(e) {
+            const touch = e.touches[0];
+            initialX = touch.clientX - currentX;
+            initialY = touch.clientY - currentY;
+            isDragging = true;
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+                draggableMenu.style.left = currentX + 'px';
+                draggableMenu.style.top = currentY + 'px';
+            }
+        }
+
+        function dragTouch(e) {
+            if (isDragging) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                currentX = touch.clientX - initialX;
+                currentY = touch.clientY - initialY;
+                draggableMenu.style.left = currentX + 'px';
+                draggableMenu.style.top = currentY + 'px';
+            }
+        }
+
+        function stopDragging() {
+            isDragging = false;
+        }
+
+        currentX = 15;
+        currentY = 15;
+        draggableMenu.style.left = currentX + 'px';
+        draggableMenu.style.top = currentY + 'px';
+
+        initializePalpites();
+        setInterval(initializePalpites, 60000);
+        setInterval(showHorarios, 60000);
     </script>
 </body>
 </html>
