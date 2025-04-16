@@ -1,595 +1,479 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Águia Oficial</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #01c92c, #05a327, #03a52b, #01a553, #017c20, #178002, #07aa1d);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .phone-frame {
-            width: 320px;
-            height: 600px;
-            background: linear-gradient(45deg, #1db925, #12b303);
-            border-radius: 40px;
-            padding: 20px;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .screen {
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .screen iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .fullscreen-btn {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: linear-gradient(45deg, #ffffff, #ffffff);
-            color: rgb(0, 0, 0);
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .fullscreen-btn:hover {
-            background: linear-gradient(45deg, #ffffff, #ffffff);
-        }
-
-        .fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            border-radius: 0;
-            z-index: 9999;
-        }
-
-        /* Ajuste para o botão em tela cheia em dispositivos móveis */
-        @media (max-width: 768px) {
-            .fullscreen .fullscreen-btn {
-                position: fixed;
-                top: 10px; /* Move o botão para o topo */
-                right: 10px;
-                bottom: auto; /* Remove o posicionamento inferior */
-                padding: 10px 15px; /* Aumenta o tamanho para facilitar o toque */
-                font-size: 16px; /* Aumenta a fonte */
-            }
-        }
-
-        /* Restante do CSS mantido igual */
-        .hamburger-menu {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .hamburger {
-            width: 40px;
-            height: 30px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #ffffff, #ffffff);
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .menu-content {
-            display: none;
-            position: absolute;
-            top: 40px;
-            right: 0;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-
-        .menu-content a {
-            display: block;
-            color: #000000;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px;
-            background: linear-gradient(45deg, #d3d3d3, #d3d3d3);
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-
-        .menu-content a:hover {
-            background: linear-gradient(45deg, #ff0000, #ff8000);
-        }
-
-        #menu-toggle:checked ~ .menu-content {
-            display: block;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #00fff2, #2f00ff);
-            border-radius: 50%;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.1);
-        }
-
-        .social-links img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .cotacoes, .vantagens, .palpites {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin: 20px 10px;
-            width: 100%;
-            max-width: 600px;
-            box-sizing: border-box;
-        }
-
-        .cotacoes table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .cotacoes th, .cotacoes td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .cotacoes th {
-            background: linear-gradient(90deg, #016901, #016901);
-            color: white;
-        }
-
-        .cotacoes td {
-            color: #ffffff;
-        }
-
-        .vantagens {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 20px 0 40px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            border-radius: 15px;
-        }
-
-        .vantagens h2 {
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            text-shadow: 0 0 5px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
-        }
-
-        .vantagem-card {
-            width: 200px;
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(8, 221, 121, 0.4), rgba(8, 221, 121, 0.4));
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            color: #fff;
-        }
-
-        .vantagem-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        .vantagem-card h3 {
-            margin: 0 0 10px;
-            font-size: 20px;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 0 0 3px rgba(0,0,0,0.5);
-        }
-
-        .vantagem-card p {
-            margin: 0;
-            font-size: 14px;
-            color: #fff;
-            text-shadow: 0 0 3px rgba(0,0,0,0.5);
-        }
-
-        .palpites select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 10px;
-            border: none;
-            background: linear-gradient(45deg, #ffffff, #ffffff);
-            color: black;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
-        .palpite-result {
-            margin-top: 15px;
-            padding: 10px;
-            background: linear-gradient(90deg, #dbdbdb, #dbdbdb);
-            border-radius: 10px;
-            color: white;
-        }
-
-        .palpite-table {
-            width: 100%;
-            margin-top: 15px;
-            color: #333;
-        }
-
-        .palpite-table td {
-            padding: 8px;
-            background: linear-gradient(90deg, #ffffff, #ffffff);
-            border-radius: 5px;
-            margin: 5px 0;
-        }
-
-        .banca-card-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 1px;
-            position: relative;
-        }
-
-        .banca-card-image {
-            width: 55px;
-            height: 65px;
-            margin-right: 100px;
-            position: absolute;
-            left: calc(50% - 150px);
-            z-index: 1;
-        }
-
-        .banca-card {
-            display: inline-block;
-            padding: 15px 25px;
-            background: linear-gradient(135deg, rgba(234, 0, 255, 0.4), rgba(234, 0, 255, 0.4));
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            font-size: 16px;
-            text-transform: uppercase;
-            text-shadow: 0 0 3px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 0;
-        }
-
-        .banca-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        .overlay {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-
-        .overlay img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
-            color: #fff;
-            background: #ff0000;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            line-height: 40px;
-            z-index: 10001;
-        }
-
-        .close-btn:hover {
-            background: #cc0000;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÁGUIA OFICIAL</title>
+<link href="https://www.aguiaoficial.com/" rel="canonical"/>
+<link href="https://png.pngtree.com/png-clipart/20241105/original/pngtree-cute-cartoon-bald-eagle-sticker-animated-vector-image-png-image_16683081.png" rel="icon" type="image/png"/>
+<meta content="Baixe nosso aplicativo Águia Oficial para acompanhar as melhores dicas de jogos, apostas e cassino. Acesse agora e aumente suas chances de ganhar!" name="description"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T2GCCKP5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6T2GCCKP5S');
+</script>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  overflow-x: hidden;
+}
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 1;
+}
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+.whatsapp-button img {
+  width: 30px;
+  height: 30px;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.ads-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #f8f9fa;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.botao {
+  background: #388E3C;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sidebar.active {
+  transform: translateX(0);
+}
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.sidebar .nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+.sidebar .nav-buttons a {
+  background: #007BFF;
+  color: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  width: 80%;
+  font-size: 14px;
+}
+.show-sidebar-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1000;
+}
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-btn span {
+  background: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 2px 0;
+}
+.menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+.menu-panel.active {
+  transform: translateX(0);
+}
+.menu-panel .close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+.menu-panel h3 {
+  color: #333;
+  margin: 10px 0;
+}
+.menu-panel select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#palpites-list ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+#palpites-list li {
+  margin: 5px 10px;
+  font-size: 14px;
+  color: #333;
+}
+#validade {
+  font-weight: bold;
+  color: #007BFF;
+  font-size: 14px;
+}
+#cotacoes {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0;
+}
+#cotacoes table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+#cotacoes th, #cotacoes td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+#cotacoes th {
+  background-color: #f2f2f2;
+}
+#cotacoes p {
+  font-size: 12px;
+  color: #555;
+}
+#puxadas select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#puxadas-list {
+  font-size: 14px;
+  color: #333;
+}
+#feiticeira-link img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .menu-panel {
+    width: 70%;
+    right: 0;
+  }
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5066020163837493" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Overlay com a imagem bonus1.png (superior) -->
-    <div class="overlay" id="bonus1-overlay">
-        <img src="bonus1.png" alt="Bônus 1">
-        <button class="close-btn" onclick="closeBonus1()">X</button>
+<iframe allow="clipboard-read; clipboard-write" frameborder="0" id="embeddedIframe" loading="lazy" sandbox="allow-scripts allow-same-origin" src="https://app.aguiaoficial.com/pr/XvrHVdt2" title="Conteúdo interativo do Águia Oficial"></iframe>
+<div class="whatsapp-button" onclick="window.open('https://wa.me/+5583991023576?text=Olá,%20gostaria%20de%20jogar!%20Como%20faço?', '_blank')">
+  <img alt="WhatsApp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
+</div>
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" onclick="toggleSidebar()">×</div>
+  <div style="text-align: center; margin-bottom: 15px;">
+    <a href="https://feiticeiravip.club" target="_blank">
+      <img alt="Banca Parceira" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png" style="width: 100px; height: auto;"/>
+    </a>
+    <div style="color: #add8e6; font-size: 12px; margin-top: 4px;">
+      BANCA PARCEIRA
     </div>
-
-    <!-- Overlay com a imagem bonus.png (inferior) -->
-    <div class="overlay" id="bonus-overlay" style="display: none;">
-        <img src="bonus.png" alt="Bônus">
-        <button class="close-btn" onclick="closeBonus()">X</button>
-    </div>
-
-    <div class="hamburger-menu">
-        <input type="checkbox" id="menu-toggle" style="display: none;">
-        <label for="menu-toggle" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <div class="menu-content">
-            <a href="https://api.whatsapp.com/send?phone=5583991023576&text=Preciso%20de%20ajuda,%20suporte" target="_blank">Fale com o Suporte</a>
-            <a href="#palpites">Palpites</a>
-            <a href="aguia.apk" download="aguia.apk">Baixar App</a>
-        </div>
-    </div>
-
-    <div class="phone-frame" id="phone-frame">
-        <div class="screen">
-            <iframe src="https://app.aguiaoficial.com/pr/XvrHVdt2" id="iframe-content"></iframe>
-            <button class="fullscreen-btn" onclick="toggleFullscreen()">Tela Cheia</button>
-        </div>
-    </div>
-
-    <div class="banca-card-container">
-        <img src="logo.png" alt="Águia Oficial" class="banca-card-image">
-        <a href="https://www.feiticeiravip.club" target="_blank" class="banca-card">Banca Feiticeira vip</a>
-    </div>
-
-    <div class="social-links">
-        <a href="https://api.whatsapp.com/send?phone=5583991023576&text=Ol%C3%A1%2C%20promotora.%20Preciso%20de%20ajuda!" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        </a>
-        <a href="https://app.aguiaoficial.com/pr/XvrHVdt2" target="_blank">
-            <img src="acertos.png" alt="Acertos">
-        </a>
-        <a href="https://www.feiticeiravip.club" target="_blank">
-            <img src="aguia.png" alt="Águia">
-        </a>
-        <a href="https://k.kwai.com/u/@promotorajulianajb/GTCczpY0" target="_blank">
-            <img src="kwai.png" alt="Kwai">
-        </a>
-        <a href="https://www.youtube.com/@julianajb-s1l/shorts" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-        </a>
-    </div>
-
-    <div class="cotacoes">
-        <h2>Cotações para Jogo do Bicho</h2>
-        <table>
-            <tr><th>Tipo de Aposta</th><th>Valor da Cotação</th></tr>
-            <tr><td>Unidade</td><td>R$ 8,00</td></tr>
-            <tr><td>Grupo</td><td>R$ 20,00</td></tr>
-            <tr><td>Dezena</td><td>R$ 80,00</td></tr>
-            <tr><td>Centena</td><td>R$ 800,00</td></tr>
-            <tr><td>Milhar</td><td>R$ 8.000,00</td></tr>
-            <tr><td>Duque GP</td><td>R$ 180,00</td></tr>
-            <tr><td>Terno GP</td><td>R$ 1.500,00</td></tr>
-            <tr><td>Quadra GP</td><td>R$ 1.000,00</td></tr>
-            <tr><td>Quina GP (8/5)</td><td>R$ 1.000,00</td></tr>
-            <tr><td>Sena GP (10/6)</td><td>R$ 1.000,00</td></tr>
-            <tr><td>Duque Dez</td><td>R$ 300,00</td></tr>
-            <tr><td>Terno Dez Seco</td><td>R$ 10.000,00</td></tr>
-            <tr><td>Terno Dez</td><td>R$ 5.000,00</td></tr>
-            <tr><td>Passe Vai</td><td>R$ 90,00</td></tr>
-            <tr><td>Passe Vai Vem</td><td>R$ 45,00</td></tr>
-        </table>
-    </div>
-
-    <div class="vantagens">
-        <h2>Vantagens de se cadastrar</h2>
-        <div class="vantagem-card">
-            <h3>Rapidez</h3>
-            <p>Saques e recargas automáticas em segundos.</p>
-        </div>
-        <div class="vantagem-card">
-            <h3>Segurança</h3>
-            <p>Dados protegidos com tecnologia avançada.</p>
-        </div>
-        <div class="vantagem-card">
-            <h3>Facilidade</h3>
-            <p>Cadastro simples e rápido.</p>
-        </div>
-        <div class="vantagem-card">
-            <h3>Confiança</h3>
-            <p>Transparência e suporte dedicado.</p>
-        </div>
-    </div>
-
-    <div class="palpites" id="palpites">
-        <h2 id="palpites-title">PALPITES DO DIA</h2>
-        <select id="banca-select" onchange="showPalpite(this.value)">
-            <option value="">Escolha uma banca</option>
-            <option value="lotep">LOTEP</option>
-            <option value="ptrio">PT RIO</option>
-            <option value="lookgo">LOOK/GO</option>
-            <option value="malucaba">MALUCA/BA</option>
-            <option value="nacional">NACIONAL</option>
-        </select>
-        <div class="palpite-result" id="palpite-result" style="display: none;"></div>
-    </div>
-
-    <script>
-        const palpites = {
-            "lotep": [
-                "0102 - Avestruz", "1523 - Borboleta", "2940 - Coelho", "4162 - Leão", "5768 - Macaco",
-                "6980 - Peru", "7212 - Burro", "8345 - Elefante", "9476 - Pavão", "1088 - Tigre",
-                "0507 - Águia", "1932 - Camelo", "3548 - Elefante", "4950 - Galo", "5364 - Leão"
-            ],
-            "ptrio": [
-                "0507 - Águia", "1932 - Camelo", "3548 - Elefante", "4950 - Galo", "5364 - Leão",
-                "6789 - Urso", "7401 - Avestruz", "8216 - Borboleta", "9072 - Porco", "1196 - Veado",
-                "0910 - Burro", "1720 - Cachorro", "2536 - Cobra", "3740 - Coelho", "4552 - Galo"
-            ],
-            "lookgo": [
-                "0910 - Burro", "1720 - Cachorro", "2536 - Cobra", "3740 - Coelho", "4552 - Galo",
-                "5960 - Jacaré", "6184 - Touro", "7699 - Vaca", "8503 - Avestruz", "9388 - Tigre",
-                "1314 - Borboleta", "2124 - Cabra", "3044 - Cavalo", "4156 - Gato", "5672 - Porco"
-            ],
-            "malucaba": [
-                "1314 - Borboleta", "2124 - Cabra", "3044 - Cavalo", "4156 - Gato", "5672 - Porco",
-                "6375 - Pavão", "7088 - Tigre", "8192 - Urso", "9700 - Vaca", "0548 - Elefante",
-                "0708 - Águia", "1124 - Cabra", "2730 - Camelo", "3352 - Galo", "4968 - Macaco"
-            ],
-            "nacional": [
-                "0708 - Águia", "1124 - Cabra", "2730 - Camelo", "3352 - Galo", "4968 - Macaco",
-                "5576 - Pavão", "6280 - Peru", "7391 - Urso", "8604 - Avestruz", "9987 - Tigre",
-                "0102 - Avestruz", "1523 - Borboleta", "2940 - Coelho", "4162 - Leão", "5768 - Macaco"
-            ]
-        };
-
-        // Função para formatar a data atual
-        function getCurrentDate() {
-            const today = new Date();
-            const day = String(today.getDate()).padStart(2, '0');
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const year = today.getFullYear();
-            return `${day}/${month}/${year}`;
-        }
-
-        // Atualiza o título com a data atual
-        document.getElementById('palpites-title').textContent = `PALPITES DO DIA (${getCurrentDate()})`;
-
-        // Função para embaralhar array (Fisher-Yates shuffle)
-        function shuffleArray(array) {
-            const shuffled = [...array];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            return shuffled;
-        }
-
-        // Função para obter ou gerar palpites do dia
-        function getDailyPalpites(banca) {
-            const currentDate = getCurrentDate();
-            const storageKey = `palpites_${banca}_${currentDate}`;
-            let dailyPalpites = localStorage.getItem(storageKey);
-
-            if (!dailyPalpites) {
-                const shuffled = shuffleArray(palpites[banca]);
-                dailyPalpites = shuffled.slice(0, 10); // Pega os 10 primeiros
-                localStorage.setItem(storageKey, JSON.stringify(dailyPalpites));
-            } else {
-                dailyPalpites = JSON.parse(dailyPalpites);
-            }
-
-            return dailyPalpites;
-        }
-
-        // Função para exibir palpites
-        function showPalpite(banca) {
-            const resultDiv = document.getElementById('palpite-result');
-            if (banca && palpites[banca]) {
-                resultDiv.style.display = 'block';
-                const dailyPalpites = getDailyPalpites(banca);
-
-                let html = '<table class="palpite-table">';
-                dailyPalpites.forEach(palpite => {
-                    html += `<tr><td>${palpite}</td></tr>`;
-                });
-                html += '</table>';
-                resultDiv.innerHTML = html;
-            } else {
-                resultDiv.style.display = 'none';
-            }
-        }
-
-        function toggleFullscreen() {
-            const phoneFrame = document.getElementById('phone-frame');
-            const fullscreenBtn = document.querySelector('.fullscreen-btn');
-
-            if (!phoneFrame.classList.contains('fullscreen')) {
-                phoneFrame.classList.add('fullscreen');
-                fullscreenBtn.textContent = 'Sair da Tela Cheia';
-            } else {
-                phoneFrame.classList.remove('fullscreen');
-                fullscreenBtn.textContent = 'Tela Cheia';
-            }
-        }
-
-        // Função para fechar o overlay bonus1 e mostrar o bonus
-        function closeBonus1() {
-            document.getElementById('bonus1-overlay').style.display = 'none';
-            document.getElementById('bonus-overlay').style.display = 'flex';
-        }
-
-        // Função para fechar o overlay bonus
-        function closeBonus() {
-            document.getElementById('bonus-overlay').style.display = 'none';
-        }
-    </script>
+  </div>
+  <div class="nav-buttons">
+    <a href="https://aguiaoficial.club/tutorial/" target="_blank">TUTORIAL</a>
+    <a href="https://aguiaoficial.club/Cassino/" target="_blank">CASSINO</a>
+  </div>
+  <div class="ads-container">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5066020163837493" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+  </div>
+</div>
+<div class="show-sidebar-btn" onclick="toggleSidebar()">☰</div>
+<div class="menu-btn" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="menu-panel" id="menu-panel">
+  <div class="close-btn" onclick="toggleMenu()">×</div>
+  <h3>Palpites - Escolha uma Banca</h3>
+  <select id="banca-select" onchange="displayPalpites()">
+    <option value="LOTEP">LOTEP</option>
+    <option value="FEDERAL">FEDERAL (Quarta e Sábado)</option>
+    <option value="LOOK">LOOK</option>
+    <option value="PT RIO">PT RIO</option>
+    <option value="MALUCA">MALUCA</option>
+    <option value="NACIONAL">NACIONAL</option>
+  </select>
+  <div id="palpites-list"></div>
+  <div id="validade">VÁLIDO ATÉ: --:--</div>
+  <h3>Puxadas dos Animais</h3>
+  <div id="puxadas">
+    <select id="animal-select" onchange="displayPuxadas()">
+      <option value="1">Avestruz (Grupo 1)</option>
+      <option value="2">Águia (Grupo 2)</option>
+      <option value="3">Burro (Grupo 3)</option>
+      <option value="4">Borboleta (Grupo 4)</option>
+      <option value="5">Cachorro (Grupo 5)</option>
+      <option value="6">Cabra (Grupo 6)</option>
+      <option value="7">Carneiro (Grupo 7)</option>
+      <option value="8">Camelo (Grupo 8)</option>
+      <option value="9">Cobra (Grupo 9)</option>
+      <option value="10">Coelho (Grupo 10)</option>
+      <option value="11">Cavalo (Grupo 11)</option>
+      <option value="12">Elefante (Grupo 12)</option>
+      <option value="13">Galo (Grupo 13)</option>
+      <option value="14">Gato (Grupo 14)</option>
+      <option value="15">Jacaré (Grupo 15)</option>
+      <option value="16">Leão (Grupo 16)</option>
+      <option value="17">Macaco (Grupo 17)</option>
+      <option value="18">Porco (Grupo 18)</option>
+      <option value="19">Pavão (Grupo 19)</option>
+      <option value="20">Peru (Grupo 20)</option>
+      <option value="21">Touro (Grupo 21)</option>
+      <option value="22">Tigre (Grupo 22)</option>
+      <option value="23">Urso (Grupo 23)</option>
+      <option value="24">Veado (Grupo 24)</option>
+      <option value="25">Vaca (Grupo 25)</option>
+    </select>
+    <div id="puxadas-list"></div>
+  </div>
+  <h3>Cotações para Jogo do Bicho</h3>
+  <div id="cotacoes">
+    <table>
+      <tr><th>Tipo de Aposta</th><th>Valor da Cotação</th></tr>
+      <tr><td>Unidade</td><td>R$ 8,00</td></tr>
+      <tr><td>Grupo</td><td>R$ 20,00</td></tr>
+      <tr><td>Dezena</td><td>R$ 80,00</td></tr>
+      <tr><td>Centena</td><td>R$ 800,00</td></tr>
+      <tr><td>Milhar</td><td>R$ 8.000,00</td></tr>
+      <tr><td>Duque GP</td><td>R$ 180,00</td></tr>
+      <tr><td>Terno GP</td><td>R$ 1.500,00</td></tr>
+      <tr><td>Quadra GP</td><td>R$ 1.000,00</td></tr>
+      <tr><td>Quina GP (8/5)</td><td>R$ 1.000,00</td></tr>
+      <tr><td>Sena GP (10/6)</td><td>R$ 1.000,00</td></tr>
+      <tr><td>Duque Dez</td><td>R$ 300,00</td></tr>
+      <tr><td>Terno Dez Seco</td><td>R$ 10.000,00</td></tr>
+      <tr><td>Terno Dez</td><td>R$ 5.000,00</td></tr>
+      <tr><td>Passe Vai</td><td>R$ 90,00</td></tr>
+      <tr><td>Passe Vai Vem</td><td>R$ 45,00</td></tr>
+    </table>
+    <p>Bônus: 30% novos cadastros, 15% dia de federal e 10% dias normais.</p>
+  </div>
+  <div id="feiticeira-link">
+    <a href="https://feiticeiravip.club" target="_blank">
+      <img alt="Feiticeira" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhesDatphF1wF9AAHNcDekAQHG9oR4kYMVGBntwFUbpZxi2r6fAy_z09lbIGIH0_ryKSWFrlJVVec_9z2EpL8mgcUZHTBKa5TZL0tgSrScqpoJfnNaytz8bxQf9p9M8NUEEq2J_MOrYjBuGx442sKrCGAmtJaaJAMDq6-XW5THupyaRQZ3id5V7jrE3bEf9/s1600/feiticeira2.png"/>
+    </a>
+  </div>
+</div>
+<div class="ads-container">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5066020163837493" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+</div>
+<script>
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('active');
+}
+function toggleMenu() {
+  document.getElementById('menu-panel').classList.toggle('active');
+}
+function generateRandomMilhar() {
+  return Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+}
+function getPeriodo() {
+  const now = new Date();
+  const hour = now.getHours();
+  if (hour >= 5 && hour < 13) {
+    return { periodo: 'Manhã', validade: '13:00' };
+  } else if (hour >= 13 && hour < 18) {
+    return { periodo: 'Tarde', validade: '18:00' };
+  } else {
+    return { periodo: 'Noite', validade: '05:00' };
+  }
+}
+function generatePalpites() {
+  const bancas = ['LOTEP', 'FEDERAL', 'LOOK', 'PT RIO', 'MALUCA', 'NACIONAL'];
+  const palpites = {};
+  const { periodo } = getPeriodo();
+  const isWednesdayOrSaturday = new Date().getDay() === 3 || new Date().getDay() === 6;
+  bancas.forEach(banca => {
+    if (banca === 'FEDERAL' && !isWednesdayOrSaturday) {
+      palpites[banca] = { milhars: [], periodo, note: 'Disponível apenas às quartas e sábados' };
+    } else {
+      const milhars = [];
+      for (let i = 0; i < 10; i++) {
+        milhars.push(generateRandomMilhar());
+      }
+      palpites[banca] = { milhars, periodo };
+    }
+  });
+  localStorage.setItem('palpites', JSON.stringify(palpites));
+  return palpites;
+}
+function loadPalpites() {
+  const storedPalpites = localStorage.getItem('palpites');
+  const { periodo } = getPeriodo();
+  if (storedPalpites) {
+    const palpites = JSON.parse(storedPalpites);
+    if (palpites.LOTEP.periodo === periodo) {
+      return palpites;
+    }
+  }
+  return generatePalpites();
+}
+function displayPalpites() {
+  const bancaSelect = document.getElementById('banca-select');
+  const palpitesList = document.getElementById('palpites-list');
+  const validadeDiv = document.getElementById('validade');
+  const palpites = loadPalpites();
+  const selectedBanca = bancaSelect.value;
+  const { validade } = getPeriodo();
+  if (palpites[selectedBanca].milhars.length === 0) {
+    palpitesList.innerHTML = `<p>${palpites[selectedBanca].note}</p>`;
+  } else {
+    let list = `<ul>`;
+    palpites[selectedBanca].milhars.forEach(milhar => {
+      list += `<li>${milhar}</li>`;
+    });
+    list += `</ul>`;
+    palpitesList.innerHTML = list;
+  }
+  validadeDiv.textContent = `VÁLIDO ATÉ: ${validade}`;
+}
+const puxadas = {
+  1: ['Vaca', 'Águia', 'Galo', 'Pavão', 'Peru'],
+  2: ['Coelho', 'Avestruz', 'Galo', 'Pavão', 'Peru'],
+  3: ['Cavalo', 'Elefante', 'Touro', 'Veado', 'Coelho', 'Cobra'],
+  4: ['Cabra', 'Elefante', 'Gato', 'Leão', 'Cachorro', 'Galo'],
+  5: ['Galo', 'Gato', 'Camelo', 'Macaco', 'Porco', 'Pavão'],
+  6: ['Carneiro', 'Macaco', 'Elefante', 'Touro', 'Tigre', 'Urso'],
+  7: ['Cabra', 'Coelho', 'Vaca'],
+  8: ['Cachorro', 'Elefante', 'Urso'],
+  9: ['Jacaré', 'Porco', 'Burro', 'Gato'],
+  10: ['Carneiro', 'Águia', 'Burro'],
+  11: ['Burro', 'Cabra', 'Touro'],
+  12: ['Cabra', 'Urso', 'Tigre', 'Leão', 'Burro'],
+  13: ['Cachorro', 'Avestruz', 'Águia', 'Pavão', 'Peru'],
+  14: ['Cachorro', 'Leão', 'Tigre', 'Cobra'],
+  15: ['Cobra', 'Porco', 'Borboleta', 'Macaco'],
+  16: ['Elefante', 'Gato', 'Tigre', 'Urso'],
+  17: ['Cachorro', 'Cabra', 'Peru', 'Jacaré'],
+  18: ['Cobra', 'Peru', 'Jacaré', 'Cachorro'],
+  19: ['Avestruz', 'Águia', 'Galo', 'Peru'],
+  20: ['Avestruz', 'Águia', 'Galo', 'Pavão', 'Veado'],
+  21: ['Vaca', 'Burro', 'Cabra'],
+  22: ['Gato', 'Leão', 'Cabra'],
+  23: ['Leão', 'Elefante', 'Camelo', 'Cabra'],
+  24: ['Peru', 'Burro', 'Cabra'],
+  25: ['Touro', 'Avestruz', 'Carneiro']
+};
+function displayPuxadas() {
+  const animalSelect = document.getElementById('animal-select');
+  const puxadasList = document.getElementById('puxadas-list');
+  const selectedAnimal = animalSelect.value;
+  const animais = puxadas[selectedAnimal] || [];
+  if (animais.length > 0) {
+    puxadasList.innerHTML = `<p>Este animal puxa: ${animais.join(', ')}</p>`;
+  } else {
+    puxadasList.innerHTML = `<p>Nenhuma puxada disponível.</p>`;
+  }
+}
+window.onload = function() {
+  displayPalpites();
+  displayPuxadas();
+};
+</script>
 </body>
 </html>
