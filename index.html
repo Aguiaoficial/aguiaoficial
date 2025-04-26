@@ -136,20 +136,22 @@ iframe {
 }
 .menu-btn {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #333;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  width: 40px;
-  height: 40px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   z-index: 1001;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .menu-btn span {
   background: #fff;
