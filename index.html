@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Performance: Preconnect for external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <!-- Google tag -->
     <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-V0N3WWWQ7V"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,29 +12,27 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://aguiaoficialbet.com.br https://app.aguiaoficialbet.com.br https://api.whatsapp.com https://tigerclub.com.br; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-src https://app.aguiaoficialbet.com.br; connect-src 'self' https://api.whatsapp.com https://www.googletagmanager.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://aguiaoficial.com https://app.aguiaoficial.com https://api.whatsapp.com https://tigerclub.com.br; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-src https://app.aguiaoficial.com; connect-src 'self' https://api.whatsapp.com https://www.googletagmanager.com;">
     <title>ÁGUIA OFICIAL - Cadastros novos ganham 30% de bônus</title>
     <meta name="description" content="Águia Oficial - Ganhe 30% de bônus em novos cadastros! Aposte em bancas como PT Rio, Look GO e mais com nosso aplicativo online.">
     <meta name="keywords" content="águia oficial, aplicativo online, banca online">
-    <!-- SEO: Open Graph and Twitter Card -->
     <meta property="og:title" content="Águia Oficial - Cadastros novos ganham 30% de bônus">
     <meta property="og:description" content="Jogue na Águia Oficial e aproveite bônus de até 30% em novos cadastros. Aposte em bancas online como PT Rio e Nacional!">
-    <meta property="og:image" content="https://aguiaoficialbet.com.br/logo.webp">
-    <meta property="og:url" content="https://aguiaoficialbet.com.br">
+    <meta property="og:image" content="https://aguiaoficial.com/logo.webp">
+    <meta property="og:url" content="https://aguiaoficial.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Águia Oficial - 30% de Bônus para Novos Cadastros">
     <meta name="twitter:description" content="Aposte com segurança e ganhe bônus na Águia Oficial. Cadastre-se agora!">
-    <meta name="twitter:image" content="https://aguiaoficialbet.com.br/logo.webp">
-    <link rel="canonical" href="https://aguiaoficialbet.com.br">
-    <!-- SEO: Schema Markup -->
+    <meta name="twitter:image" content="https://aguiaoficial.com/logo.webp">
+    <link rel="canonical" href="https://aguiaoficial.com">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Águia Oficial",
-      "url": "https://aguiaoficialbet.com.br",
-      "logo": "https://aguiaoficialbet.com.br/logo.webp",
+      "url": "https://aguiaoficial.com",
+      "logo": "https://aguiaoficial.com/logo.webp",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+5583991177252",
@@ -88,24 +84,6 @@
             width: 100%;
             transition: opacity 0.3s ease-in-out;
         }
-        #jogar.loading::before {
-            content: 'Carregando jogo...';
-            display: block;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #374151;
-        }
-        #jogar.error::before {
-            content: 'Erro ao carregar o jogo. Tente novamente ou contate o suporte.';
-            display: block;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #ef4444;
-            background: #fef2f2;
-            border-radius: 6px;
-        }
         #palpites-container {
             padding: 16px;
             max-width: 600px;
@@ -133,6 +111,7 @@
             height: calc(100vh - 100px);
             border: none;
             display: block;
+            min-height: 600px;
         }
         footer {
             background: #ffffff;
@@ -199,12 +178,12 @@
             appearance: none;
         }
         select:focus, input:focus, button:focus {
-            border-color: #10b981;
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
             outline: none;
         }
         button:not(footer button) {
-            background: #10b981;
+            background: #f59e0b;
             color: #fff;
             font-weight: 600;
             cursor: pointer;
@@ -212,10 +191,16 @@
             transition: background 0.2s, transform 0.1s;
         }
         button:not(footer button):hover {
-            background: #059669;
+            background: #d97706;
         }
         button:not(footer button):active {
             transform: scale(0.98);
+        }
+        button.green {
+            background: #10b981;
+        }
+        button.green:hover {
+            background: #059669;
         }
         button.brown {
             background: #8B4513;
@@ -272,7 +257,7 @@
             gap: 8px;
         }
         h2 {
-            color: #10b981;
+            color: #f59e0b;
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 12px;
@@ -286,6 +271,14 @@
         p {
             font-size: 14px;
             margin-bottom: 10px;
+        }
+        a {
+            color: #f59e0b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #d97706;
         }
         ul {
             list-style: disc;
@@ -343,7 +336,7 @@
             content: '';
             width: 16px;
             height: 16px;
-            border: 2px solid #10b981;
+            border: 2px solid #f59e0b;
             border-top-color: transparent;
             border-radius: 50%;
             animation: spin 1s linear infinite;
@@ -409,15 +402,17 @@
     </header>
 
     <div id="main-content">
-        <div id="jogar" class="loading">
-            <iframe id="embeddedIframe" allow="clipboard-read; clipboard-write" src="https://app.aguiaoficialbet.com.br/pr/XvrHVdt2" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-read allow-clipboard-write"></iframe>
+        <div id="jogar">
+            <iframe id="embeddedIframe" allow="clipboard-read; clipboard-write" src="https://app.aguiaoficial.com/pr/XvrHVdt2" width="100%" height="600" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-read allow-clipboard-write">
+                <p>Seu navegador não suporta iframes. Acesse diretamente: <a href="https://app.aguiaoficial.com/pr/XvrHVdt2" rel="noopener noreferrer">Águia Oficial</a></p>
+            </iframe>
         </div>
         <div id="palpites-container">
             <div id="palpites">
                 <div class="section">
                     <h2>Gerar Palpites</h2>
                     <div class="palpite-icon">
-                        <img src="icon.png" alt="Ícone de Palpites" loading="lazy" width="100" height="100">
+                        <img src="icon.png" alt="Logo da Banca Tiger Club" loading="lazy" width="100" height="100">
                     </div>
                     <label for="bancaSelect">Escolha a Banca:</label>
                     <select id="bancaSelect" aria-describedby="bancaError">
@@ -431,7 +426,7 @@
                     <div id="bancaError" class="error hidden">Por favor, selecione uma banca.</div>
                     <div class="button-group">
                         <button id="gerarPalpites" disabled>Gerar Palpites</button>
-                        <button onclick="window.open('https://tigerclub.com.br', '_blank', 'noopener,noreferrer')" class="brown">Banca Tiger Club</button>
+                        <button onclick="openWindow('https://tigerclub.com.br', '_blank')" class="brown">Banca Tiger Club</button>
                     </div>
                     <div class="palpite-result" id="palpiteOutput"></div>
                 </div>
@@ -477,60 +472,61 @@
                             <tr><td>Quadra GP</td><td>1.000,00</td></tr>
                             <tr><td>Quina GP (8/5)</td><td>1.000,00</td></tr>
                             <tr><td>Sena GP</td><td>1.000,00</td></tr>
-                            <tr><td>Duque Dez</td><td>300</td></tr>
+                            <tr><td>Duque Dez</td><td>300,00</td></tr>
                             <tr><td>Terno Dez Seco</td><td>10.000,00</td></tr>
-                            <tr><td>Terno</td><td>5.000,00</td></tr>
+                            <tr><td>Terno Dez</td><td>5.000,00</td></tr>
                             <tr><td>Passe Vai</td><td>90,00</td></tr>
                             <tr><td>Passe Vai Vem</td><td>45,00</td></tr>
                         </tbody>
                     </table>
                     <h3>Políticas e Privacidade</h3>
-                    <div class="content">
+                    <div class="sobre-content">
                         <p><strong>Política de Privacidade</strong></p>
-                        <p>No Águia Oficial, protegemos seus dados pessoais com o mais alto padrão de segurança. Coletamos apenas informações necessárias para oferecer nossos serviços. Esses dados não são manipulados por terceiros, exceto quando exigido por lei ou com seu consentimento explícito. Usamos cookies para melhorar a experiência do usuário, mas você pode desativá-los nas configurações do navegador.</p>
-                        <p><strong>Termos de Atividade</strong></p>
-                        <p>Ao usar o Águia Oficial, você concorda em cumprir nossas regras. Nosso serviço é destinado a maiores de 18 anos, e o uso indevido, como tentativa de fraude, resultará em suspensão da ação. Os bônus são creditados conforme as regras promocionais e não podem ser transferidos. Nos reservamos o direito de atualizar estes termos a qualquer momento, com notificação prévia aos usuários.</p>
+                        <p>No Águia Oficial, protegemos seus dados pessoais com o mais alto padrão de segurança. Coletamos apenas informações necessárias para oferecer nossos serviços. Esses dados não são compartilhados com terceiros, exceto quando exigido por lei ou com seu consentimento explícito. Usamos cookies para melhorar a experiência do usuário, mas você pode desativá-los nas configurações do navegador.</p>
+                        <p><strong>Termos de Uso</strong></p>
+                        <p>Ao usar o Águia Oficial, você concorda em cumprir nossas regras. Nosso serviço é destinado a maiores de 18 anos, e o uso indevido, como tentativa de fraude, resultará em suspensão da conta. Os bônus são creditados conforme as regras promocionais e não podem ser transferidos. Nos reservamos o direito de atualizar estes termos a qualquer momento, com notificação prévia aos usuários.</p>
                         <p>Para dúvidas, contate nosso suporte no WhatsApp: <a href="https://api.whatsapp.com/send?phone=+5583991177252&text=Olá,%20preciso%20de%20ajuda" rel="noopener noreferrer">+55 83 99117-7252</a>.</p>
-                        <button onclick="window.open('https://tigerclub.com.br', '_blank', 'noopener,noreferrer')" class="mt-4 green">Enviar</button>
+                        <button onclick="openWindow('https://tigerclub.com.br', '_blank')" class="green">BANCA PARCEIRA</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
     <footer role="navigation" aria-label="Navegação principal">
         <button onclick="openWindow('https://api.whatsapp.com/send?phone=+5583991177252&text=Olá,%20preciso%20de%20ajuda', '_blank')" aria-label="Acessar suporte via WhatsApp">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M13.6 2.4A8 8 0 0 0 0 8c0 1.8.6 3.5 1.7 4.9L1 15l2.1-.7A8 8 0 0 0 8 16c4.4 0 8-3.6 8-8a8 0 0 0-2.4-5.6zM8 5.5 6.5-4.1l-.3-.1-.7.2-1.2.4l.4-1.2.2-.7-.1-.3A6.5 6.5 0 0 1 8 1.5a6.5 0 0 1 6.5 6.5A6.5 0 0 1 8 14.5zm2.3-4.7c-.1 0-.2 0-.3-.1-.2-.1-1-.5-1-.2-.6-.2-.2-.4-.2-.5-.3-.2-.1-.3-.4-.1-.2-.1-.2-.4-.3-.5 0-.1-.1-.2-.2-.3-.1-.1-.2-.2-.3-.3-.1-.1-.3-.2-.2-.3.1-.1.2-.3.3-.4.1-.1.2-.2.3-.3.1-.1.1-.2.1-.3s0-.2-.2-.3c-.1-.1-.2-.3-.3-.4-.1-.1-.2-.2-.4-.2H6.8c-.2 0-.4 0-.5.1-.1 0-.2.1-.3.2-.1.1-.2.2-.3.3-.1.2-.2.4-.2.6 0 .2 0 .4.1.6.1.2.2.4.3.6.1.2.3.4.5.6.2.2.4.4.7.6.3.2.6.4 1 .5.3.1.7.2 1.1.2h.3c.2 0 .4-.1.6-.2.2-.1.3-.2.4-.4.1-.2.1-.4.1-.6 0-.2-.1-.3-.2-.4z"/>
+                <path d="M13.6 2.4A8 8 0 0 0 0 8c0 1.8.6 3.5 1.7 4.9L1 15l2.1-.7A8 8 0 0 0 8 16c4.4 0 8-3.6 8-8a8 8 0 0 0-2.4-5.6zM8 14.5a6.5 6.5 0 0 1-3.7-1.1l-.3-.1-.7.2-1.2.4.4-1.2.2-.7-.1-.3A6.5 6.5 0 0 1 8 1.5a6.5 6.5 0 0 1 6.5 6.5A6.5 6.5 0 0 1 8 14.5zm2.3-4.7c-.1 0-.2 0-.3-.1-.2-.1-1-.5-1.2-.6-.2-.1-.4-.2-.5-.3-.2-.1-.3-.2-.5-.4-.1-.2-.2-.4-.3-.6-.1-.2-.1-.4-.2-.5 0-.1-.1-.2-.2-.3-.1-.1-.2-.2-.3-.3-.1-.1-.2-.2-.1-.3.1-.1.2-.3.3-.4.1-.1.2-.2.3-.3.1-.1.1-.2.1-.3s0-.2-.1-.3c-.1-.1-.2-.3-.3-.4-.1-.1-.2-.2-.4-.2H6.8c-.2 0-.4 0-.5.1-.1 0-.2.1-.3.2-.1.1-.2.2-.3.3-.1.2-.2.4-.2.6 0 .2 0 .4.1.6.1.2.2.4.3.6.1.2.3.4.5.6.2.2.4.4.7.6.3.2.6.4 1 .5.3.1.7.2 1.1.2h.3c.2 0 .4-.1.6-.2.2-.1.3-.2.4-.4.1-.2.1-.4.1-.6 0-.2-.1-.3-.2-.4z"/>
             </svg>
             Suporte
         </button>
-        <button onclick="openWindow('https://app.aguiaoficial.com/pr/XvrHV2', '_blank')" aria-label="Acessar cassino">
+        <button onclick="openWindow('https://app.aguiaoficial.com/pr/XvrHVdt2', '_blank')" aria-label="Acessar cassino">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM8 4a1 1 0 0 0-1 1v3.6l-2-.3a1 1 0 0 0-1.4 1.4l3 3a1 1 0 0 0 1.4 0l3-3a1 1 0 0 0-1.4-1.4L9 8.6V5a1 1 0 0 0-1-1z"/>
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM8 4a1 1 0 0 0-1 1v3.6l-2.3-2.3a1 1 0 0 0-1.4 1.4l3 3a1 1 0 0 0 1.4 0l3-3a1 1 0 0 0-1.4-1.4L9 8.6V5a1 1 0 0 0-1-1z"/>
             </svg>
             Cassino
         </button>
         <button onclick="showSection('jogar')" aria-label="Acessar seção Jogar">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM6 5l4 3-4 3V5z"/>
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM6 5l4 3-4 3V5z"/>
             </svg>
             Jogar
         </button>
         <button onclick="showSection('palpites')" aria-label="Acessar seção Palpites">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM8 4a1 1 0 0 0-1 1v5a1 1 0 0 0 0 0V5a1 1 0 0 0-1-1z"/>
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM8 4a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0V5a1 1 0 0 0-1-1z"/>
             </svg>
             Palpites
         </button>
         <button onclick="showSection('sobre')" aria-label="Acessar seção Sobre">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM8 11.5a.75.75 0 0 1-.75.75h-.5a.75.75 0 0 1 0-1.5h.5a.75.75 0 0 1 .75.75zm0-2a.75.75 0 0 1-.75.75h-.5a.75.75 0 0 1 0-1.5h.5a.75.75 75 0 0 1 .75.75zm.75-3.25a.75.75 0 0 1-1.5 0 .25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5a1.75 1.75 0 0 1 1.75 1.75z"/>
-</svg>
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM8 11.5a.75.75 0 0 1-.75.75h-.5a.75.75 0 0 1 0-1.5h.5a.75.75 0 0 1 .75.75zm0-2a.75.75 0 0 1-.75.75h-.5a.75.75 0 0 1 0-1.5h.5a.75.75 0 0 1 .75.75zm.75-3.25a.75.75 0 0 1-1.5 0 .25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5a1.75 1.75 0 0 1 1.75 1.75z"/>
+            </svg>
             SAIBA MAIS
         </button>
     </footer>
 
     <script>
-        // Utility to debounce event listeners
         function debounce(func, delay) {
             let timeout;
             return function(...args) {
@@ -539,13 +535,15 @@
             };
         }
 
-        // Sanitize input to prevent XSS
         function sanitizeInput(input) {
             return input && typeof input === 'string' ? input.replace(/[<>"']/g, '') : '';
         }
 
+        function openWindow(url, target) {
+            window.open(url, target, 'noopener,noreferrer');
+        }
+
         try {
-            // Freeze static data
             const animals = Object.freeze([
                 { name: 'Avestruz', emoji: '🦢', group: 1, tens: ['01', '02', '03', '04'] },
                 { name: 'Águia', emoji: '🦅', group: 2, tens: ['05', '06', '07', '08'] },
@@ -660,25 +658,26 @@
                 'Vaca': ['Cabra', 'Carneiro', 'Touro']
             });
 
-            // Show specific section
             function showSection(id) {
                 console.log(`showSection: id=${id}`);
                 try {
-                    const jogar = document.getElementById('jogar');
-                    const palpitesContainer = document.getElementById('palpites-container');
-                    const sobre = document.getElementById('sobre');
-                    const palpites = document.getElementById('palpites');
+                    const sections = {
+                        jogar: document.getElementById('jogar'),
+                        palpites: document.getElementById('palpites-container'),
+                        sobre: document.getElementById('sobre')
+                    };
+                    const palpitesInner = document.getElementById('palpites');
 
-                    if (!jogar || !palpitesContainer || !sobre || !palpites) {
+                    if (!sections.jogar || !sections.palpites || !sections.sobre || !palpitesInner) {
                         throw new Error('Um ou mais elementos principais não encontrados');
                     }
 
-                    jogar.style.display = id === 'jogar' ? 'block' : 'none';
-                    palpitesContainer.style.display = id === 'palpites' ? 'block' : 'none';
-                    sobre.style.display = id === 'sobre' ? 'block' : 'none';
+                    Object.keys(sections).forEach(key => {
+                        sections[key].style.display = key === id ? 'block' : 'none';
+                    });
 
-                    palpites.classList.toggle('visible', id === 'palpites');
-                    sobre.classList.toggle('visible', id === 'sobre');
+                    palpitesInner.classList.toggle('visible', id === 'palpites');
+                    sections.sobre.classList.toggle('visible', id === 'sobre');
 
                     if (id === 'palpites') {
                         const animalSelect = document.getElementById('animalSelect');
@@ -700,7 +699,6 @@
                 }
             }
 
-            // Generate a random four-digit number
             function generateMilhar() {
                 try {
                     return Math.floor(Math.random() * 10000).toString().padStart(4, '0');
@@ -711,7 +709,6 @@
                 }
             }
 
-            // Get animal by milhar
             function getAnimalByMilhar(milhar) {
                 try {
                     const tens = milhar.slice(-2);
@@ -723,7 +720,6 @@
                 }
             }
 
-            // Get next draw time
             function getNextDrawTime(banca, now) {
                 console.log(`getNextDrawTime: banca=${banca}, now=${now}`);
                 try {
@@ -757,7 +753,6 @@
                 }
             }
 
-            // Generate betting predictions
             function generatePalpites(banca, drawTime) {
                 console.log(`generatePalpites: banca=${banca}, drawTime=${drawTime}`);
                 try {
@@ -785,11 +780,10 @@
                 }
             }
 
-            // Share predictions on WhatsApp
             function shareOnWhatsApp(banca, drawTime, palpites) {
                 console.log(`shareOnWhatsApp: banca=${banca}, drawTime=${drawTime}`);
                 try {
-                    const message = `Palpites para ${banca} - ${drawTime}:\n${palpites.map(p => `${p.milhar} - ${p.animal}`).join('\n')}\n\nACESSE O SITE:\nhttps://aguiaoficialbet.com.br/`;
+                    const message = `Palpites para ${banca} - ${drawTime}:\n${palpites.map(p => `${p.milhar} - ${p.animal}`).join('\n')}\n\nACESSE O SITE:\nhttps://aguiaoficial.com/`;
                     const encodedMessage = encodeURIComponent(message);
                     window.open(`https://api.whatsapp.com/send?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
                     gtag('event', 'share_whatsapp', { event_category: 'Palpites', event_label: banca });
@@ -799,7 +793,6 @@
                 }
             }
 
-            // Display predictions
             function displayPalpites() {
                 console.log('displayPalpites: Iniciando');
                 try {
@@ -836,7 +829,7 @@
                     const palpites = generatePalpites(selectedBanca, nextDraw.time);
                     console.log(`displayPalpites: palpites=${JSON.stringify(palpites)}`);
                     if (palpites.length === 0) {
-                        palpiteOutput.innerHTML = '<p class="error">Erro ao gerar palpites. Tente novamente.</p>';
+                        palpiteOutput.innerHTML = '<p class="error">Erro ao carregar os palpites. Tente novamente.</p>';
                         return;
                     }
 
@@ -846,7 +839,7 @@
                             <ul class="mt-3 list-disc pl-5">
                                 ${palpites.map(p => `<li class="milhares">${p.milhar} - ${p.animal}</li>`).join('')}
                             </ul>
-                            <button id="shareWhatsApp" class="mt-4">Compartilhar no WhatsApp</button>
+                            <button id="shareWhatsApp" class="mt-4 green">Compartilhar no WhatsApp</button>
                         </div>
                     `;
 
@@ -868,7 +861,6 @@
                 }
             }
 
-            // Populate animal select
             function populateAnimalSelect() {
                 console.log('populateAnimalSelect: Iniciando');
                 try {
@@ -894,7 +886,6 @@
                 }
             }
 
-            // Handle animal pull
             function handlePuxada() {
                 console.log('handlePuxada: Iniciando');
                 try {
@@ -929,7 +920,7 @@
                             <div>
                                 <h3>Puxadas para ${animal}</h3>
                                 <ul class="list-disc pl-5 mt-2">
-                                    ${pulls.length ? pulls.map(pull => `<li>${animals.find(a => a.name === pull).emoji} ${pull}</li>`).join('') : '<li>Nenhuma puxada disponível.</li>'}
+                                    ${pulls.length ? pulls.map(pull => `<li>${animals.find(a => a.name === pull)?.emoji || ''} ${pull}</li>`).join('') : '<li>Nenhuma puxada disponível.</li>'}
                                 </ul>
                             </div>
                         `;
@@ -950,19 +941,9 @@
                 try {
                     const bancaSelect = document.getElementById('bancaSelect');
                     const gerarPalpitesBtn = document.getElementById('gerarPalpites');
-                    const iframe = document.getElementById('embeddedIframe');
-                    if (!bancaSelect || !gerarPalpitesBtn || !iframe) {
+                    if (!bancaSelect || !gerarPalpitesBtn) {
                         throw new Error('Elementos principais não encontrados');
                     }
-
-                    // Iframe load/error handling
-                    iframe.onload = () => {
-                        document.getElementById('jogar').classList.remove('loading', 'error');
-                    };
-                    iframe.onerror = () => {
-                        document.getElementById('jogar').classList.remove('loading');
-                        document.getElementById('jogar').classList.add('error');
-                    };
 
                     bancaSelect.addEventListener('change', debounce(() => {
                         console.log(`bancaSelect change: value=${bancaSelect.value}`);
@@ -991,7 +972,6 @@
                 }
             });
 
-            // Suppress service worker errors
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(registrations => {
                     for (let registration of registrations) {
