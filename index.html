@@ -40,6 +40,10 @@
     #politicas.active {
       display: block;
     }
+    .banner-container {
+      min-height: 720px;
+      position: relative;
+    }
   </style>
   <script type="application/ld+json">
     {
@@ -62,7 +66,7 @@
       <h1 class="text-2xl font-bold">Águia Oficial</h1>
       <nav aria-label="Navegação principal">
         <ul class="flex space-x-4">
-          <li><a href="https://aguiaoficialbet.com.br" class="hover:text-green-300 focus-visible" aria-label="Palpites na Águia Oficial Bet">Palpites</a></li>
+          <li><a href="https://aguiaoficialbet.com.br" class="hover:text-green-300 focus-visible" aria-label="Palpites na Águia Oficial Bet" rel="noopener">Palpites</a></li>
           <li><a href="#promotor" class="hover:text-green-300 focus-visible" aria-label="Promotoria">Promotoria</a></li>
           <li><a href="#contato" class="hover:text-green-300 focus-visible" aria-label="Contato">Contato</a></li>
           <li><a href="#politicas" class="hover:text-green-300 focus-visible toggle-policies" aria-label="Políticas e Privacidade">Políticas</a></li>
@@ -74,12 +78,14 @@
     <section id="home" class="text-center">
       <h2 class="text-3xl font-bold mb-4">Bem-vindo à Águia Oficial - Apostas Online</h2>
       <p class="text-lg mb-6">Aposte com segurança e rapidez na Águia Oficial Bet, o melhor site de apostas online do Brasil. Desfrute de bônus de até 30%, cotações imbatíveis e saques via PIX!</p>
-      <picture>
-        <source srcset="banner.webp" type="image/webp" media="(min-width: 0px)" sizes="720px">
-        <img src="banner.webp" alt="Banner promocional da Águia Oficial Bet com bônus de até 30%" width="720" height="720" class="mx-auto mb-4 rounded-lg shadow-lg" loading="lazy">
-      </picture>
+      <div class="banner-container">
+        <picture>
+          <source srcset="banner.webp" type="image/webp" media="(min-width: 0px)" sizes="720px">
+          <img src="banner.webp" alt="Banner promocional da Águia Oficial Bet com bônus de até 30%" width="720" height="720" class="mx-auto mb-4 rounded-lg shadow-lg">
+        </picture>
+      </div>
       <div class="flex justify-center">
-        <a href="https://aguiaoficialbet.com.br" class="inline-block bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 focus-visible transition-colors" aria-label="Cadastre-se na Águia Oficial Bet">Cadastre-se</a>
+        <a href="https://aguiaoficialbet.com.br" class="inline-block bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 focus-visible transition-colors" aria-label="Cadastre-se na Águia Oficial Bet" rel="noopener">Cadastre-se</a>
       </div>
     </section>
     <section id="promotor" class="my-12">
@@ -144,7 +150,7 @@
       <h3 class="text-xl font-semibold mb-2">Política de Privacidade</h3>
       <p class="text-lg mb-4">Na Águia Oficial, protegemos seus dados pessoais com o mais alto padrão de segurança. Coletamos apenas informações necessárias para oferecer nossos serviços, como nome e telefone para promotores. Esses dados não são compartilhados com terceiros, exceto quando exigido por lei ou com seu consentimento explícito. Usamos cookies para melhorar a experiência do usuário, mas você pode desativá-los nas configurações do navegador.</p>
       <h3 class="text-xl font-semibold mb-2">Termos de Uso</h3>
-      <p class="text-lg mb-4">Ao usar o Águia Oficial, você concorda em cumprir nossas regras. Nosso serviço é destinado a maiores de 18 anos, e o uso indevido, como tentativa de fraude, resultará em suspensão da conta. Os bônus são creditados conforme as regras promocionais e não podem ser transferidos. Nos reservamos o direito de atualizar estes termos a qualquer momento, com notificação prévia aos usuários.</p>
+      <p class="text-lg mb-4">Ao usar o Águia Oficial, você concorda em cumprir nossas regras. Nosso serviço é destinado a maiores de 18 anos, e o uso indevido, como tentativa de fraude, resultará em suspensão da conta. Os bônus são creditados conforme as regras promocionais e não podem be transferidos. Nos reservamos o direito de atualizar estes termos a qualquer momento, com notificação prévia aos usuários.</p>
       <p class="text-lg mb-4">Para dúvidas, entre em contato pelo nosso suporte no WhatsApp: <a href="https://wa.me/5583991177252" class="text-green-600 hover:underline focus-visible" aria-label="Suporte via WhatsApp" rel="noopener">+55 83 99117-7252</a> ou por e-mail: <a href="mailto:aguiaoficialonline@gmail.com" class="text-green-600 hover:underline focus-visible" aria-label="Enviar e-mail para suporte" rel="noopener">aguiaoficialonline@gmail.com</a>.</p>
     </section>
   </main>
