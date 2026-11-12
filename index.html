@@ -1,154 +1,374 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Águia Oficial • Banca Águia Oficial</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-604824394"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="aguiaoficial.png">
+  gtag('config', 'AW-604824394');
+</script>
 
-    <!-- SEO PARA RANQUEAR A Banca Águia Oficial -->
-    <link rel="canonical" href="https://bancaaguiaoficial.bar/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Águia Oficial é o melhor site de apostas online do Brasil, oferecendo as melhores cotações do mercado, recargas e saques via PIX automáticos, resultados do Jogo do Bicho, palpites, dicas de apostas e muito mais. Jogue agora com total segurança!">
+    <meta name="keywords" content="aguia oficial online, aguia oficial, aguia oficial apostas, app águia oficial, aguia online">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Águia Oficial">
+    <meta property="og:title" content="Águia Oficial - O Melhor Site de Apostas Online do Brasil">
+    <meta property="og:description" content="Aposte com segurança e facilidade no Águia Oficial. Resultados do Jogo do Bicho, palpites, dicas e muito mais. Recargas e saques via PIX automáticos.">
+    <meta property="og:image" content="/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.aguiaoficialbet.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Águia Oficial - O Melhor Site de Apostas Online do Brasil">
+    <meta name="twitter:description" content="Aposte com segurança e facilidade no Águia Oficial. Resultados do Jogo do Bicho, palpites, dicas e muito mais. Recargas e saques via PIX automáticos.">
+    <meta name="twitter:image" content="/logo.png">
+    <link rel="canonical" href="https://www.aguiaoficialbet.com/">
+  
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4CAF50">
 
-    <meta name="description" content="Mini-site oficial da Águia Oficial — Plataforma parceira para acesso rápido e suporte via WhatsApp. Este domínio faz parte da rede de autoridade para a Banca Águia Oficial." />
-    <meta name="keywords" content="Águia Oficial, Banca Águia Oficial, banca aguia, banca oficial, plataformas, recargas, banca brasileira, feiticeira vip, pantera negra, águia prime" />
-    <meta name="author" content="Águia Oficial" />
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    <!-- SOCIAL -->
-    <meta property="og:title" content="Águia Oficial • Acesso Rápido">
-    <meta property="og:description" content="Rede oficial de mini-sites da Banca Águia Oficial. Acesso rápido e suporte 24h.">
-    <meta property="og:image" content="aguiaoficial.png">
-    <meta property="og:url" content="https://bancaaguiaoficial.bar/">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- SCHEMA GOOGLE -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Águia Oficial",
-        "url": "https://bancaaguiaoficial.bar",
-        "logo": "aguiaoficial.png",
-        "description": "Rede oficial da Águia Oficial com mini-sites otimizados para SEO e acesso rápido às plataformas parceiras."
-    }
-    </script>
+    <title>Águia Oficial - O Melhor Site de Apostas Online do Brasil</title>
 
     <style>
-        body {
+        body, html {
             margin: 0;
-            background: #000;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Menu Hamburguer */
+        .menu-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .menu-icon i {
+            font-size: 24px;
+            color: #333;
         }
 
-        /* IFRAME */
-        iframe {
-            width: 100vw;
-            height: 100vh;
+        /* Banner Recuável do WhatsApp e Miniatura */
+        .wa-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+        .wa-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border: 1px solid #eee;
+            transition: opacity 0.3s ease;
+        }
+        .wa-card.hidden {
+            display: none;
+        }
+        .wa-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .wa-header .fa-whatsapp {
+            color: #25D366;
+            font-size: 24px;
+        }
+        .wa-minimize {
+            background: none;
             border: none;
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+        .wa-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            line-height: 1.3;
+        }
+        .wa-btn {
+            background-color: #25D366;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            display: block;
+            transition: background-color 0.2s;
+        }
+        .wa-btn:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* Miniatura do Banner (Ícone de Grupo) */
+        .wa-mini {
+            background-color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 2px solid #25D366;
+        }
+        .wa-mini:hover {
+            transform: scale(1.05);
+        }
+        .wa-mini.hidden {
+            display: none !important;
+        }
+        .wa-mini i {
+            font-size: 22px;
+            color: #25D366;
+        }
+
+        /* Menu Deslizante */
+        .menu {
+            position: fixed;
+            top: 0;
+            right: -50%; /* Inicia fora da tela */
+            width: 50%;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease-in-out;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-y: auto; /* Barra de rolagem apenas no menu */
+        }
+        .menu.active {
+            right: 0; /* Mostra o menu */
+        }
+        .menu-item {
+            margin: 15px 0;
+            text-align: center;
+        }
+        .menu-item a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px; /* Links menores */
+            display: block;
+            margin-top: 10px;
+        }
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            border-radius: 15px; /* Bordas arredondadas */
+            cursor: pointer;
+        }
+        .menu-item-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 15px; /* Bordas arredondadas */
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        /* Overlay para fechar o menu ao clicar fora */
+        .overlay {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
         }
-
-        /* BOTÃO WHATSAPP */
-        .whatsapp-btn {
-            position: fixed;
-            right: 15px;
-            bottom: 90px;
-            background: #25d366;
-            padding: 12px 14px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #000;
-            z-index: 9999;
+        .overlay.active {
+            display: block;
         }
-
-        .whatsapp-btn img {
-            width: 35px;
-            height: 35px;
-        }
-
-        /* MENU INFERIOR */
-        .menu-btn {
-            position: fixed;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #111;
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 30px;
-            font-size: 14px;
-            cursor: pointer;
-            box-shadow: 0 0 10px #000;
-            z-index: 9999;
-        }
-
-        /* BOX DOS LINKS */
-        .menu-box {
-            position: fixed;
-            bottom: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.9);
-            padding: 12px;
-            border-radius: 8px;
+        /* Ocultar elementos após instalação do PWA */
+        .hidden {
             display: none;
-            flex-direction: column;
-            gap: 8px;
+        }
+        /* Título das Redes Sociais */
+        .social-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            color: #333;
+        }
+        /* Ícones Grandes para Redes Sociais */
+        .social-icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        #banner-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
             z-index: 9999;
         }
-
-        .menu-link {
-            background: #222;
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 6px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 14px;
-            border: 1px solid #444;
+        #banner img {
+            max-width: 100%;
+            max-height: 100%;
         }
-
-        .menu-link:hover {
-            background: #333;
+        #close-banner {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
+<header>
+    <h1 style="display: none;">Águia Oficial - O Melhor Site de Apostas Online do Brasil</h1>
+</header>
 
-    <!-- IFRAME -->
+<div id="banner-container">
+    <div id="banner">
+        <img src="/banner.jpg" alt="Banner de Boas-Vindas">
+        <button id="close-banner">Fechar</button>
+    </div>
+</div>
+    <!-- sAeBgEfV -->
     <iframe 
-        src="https://app.aguiaoficial.com/pr/XvrHVdt2"
-        allow="clipboard-write; autoplay; encrypted-media; fullscreen; geolocation; microphone; camera; payment"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation">
+        src="https://app.aguiaoficial.vip/pr/sAeBgEfV" 
+        allow="clipboard-read; clipboard-write"
+        title="app.aguiaoficial.com">
     </iframe>
 
-    <!-- BOTÃO WHATSAPP -->
-    <a class="whatsapp-btn" 
-       href="https://wa.me/5583993370071?text=Suporte,%20preciso%20de%20ajuda!" 
-       target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-    </a>
-
-    <!-- BOTÃO MENU -->
-    <div class="menu-btn" onclick="toggleMenu()">APPs PARCEIROS</div>
-
-    <!-- BOX LINKS -->
-    <div class="menu-box" id="menuBox">
-        <a class="menu-link" href="https://bancabrasileirabet.com.br" target="_blank">Banca Brasileira</a>
-        <a class="menu-link" href="https://bancaaguiaoficial.bar" target="_blank">Águia Oficial</a>
-        <a class="menu-link" href="https://bancafeiticeiravip.bar" target="_blank">Feiticeira Vip</a>
-        <a class="menu-link" href="https://bancaaguiaprime.bar" target="_blank">Águia Prime</a>
-        <a class="menu-link" href="https://bancapanteranegra.bar" target="_blank">Pantera Negra</a>
+    <!-- Container do Banner Recuável e Miniatura -->
+    <div class="wa-container">
+        <!-- Banner Aberto -->
+        <div class="wa-card" id="wa-card">
+            <div class="wa-header">
+                <i class="fab fa-whatsapp"></i>
+                <button id="wa-minimize" class="wa-minimize" aria-label="Minimizar">&times;</button>
+            </div>
+            <p class="wa-title">Grupo de palpites no WhatsApp</p>
+            <a href="https://chat.whatsapp.com/KRE9RgS3P9XKvLs26yBInb?s=cl&p=a&mlu=4&ilr=4&iam=2" target="_blank" class="wa-btn">Entrar</a>
+        </div>
+        
+        <!-- Miniatura (Exibida quando o banner é fechado) -->
+        <div id="wa-mini" class="wa-mini hidden" title="Abrir opções do WhatsApp">
+            <i class="fas fa-users"></i>
+        </div>
     </div>
 
     <script>
-        function toggleMenu() {
-            const box = document.getElementById("menuBox");
-            box.style.display = box.style.display === "flex" ? "none" : "flex";
-        }
-    </script>
+        // Abrir em tela cheia automaticamente
+        document.addEventListener('DOMContentLoaded', () => {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        });
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const bannerContainer = document.getElementById('banner-container');
+            const closeBanner = document.getElementById('close-banner');
+
+            // Verifica se é a primeira visita
+            if (!localStorage.getItem('bannerShown')) {
+                setTimeout(() => {
+                    bannerContainer.style.display = 'flex';
+                }, 5000);
+
+                // Marca que o banner já foi exibido
+                localStorage.setItem('bannerShown', 'true');
+            }
+
+            // Fecha o banner de boas-vindas
+            if (closeBanner) {
+                closeBanner.addEventListener('click', () => {
+                    bannerContainer.style.display = 'none';
+                });
+            }
+
+            // Lógica do Banner Recuável do WhatsApp e Miniatura
+            const waCard = document.getElementById('wa-card');
+            const waMinimize = document.getElementById('wa-minimize');
+            const waMini = document.getElementById('wa-mini');
+
+            if (waMinimize && waCard && waMini) {
+                // Ao clicar no X, esconde o card grande e mostra a miniatura
+                waMinimize.addEventListener('click', () => {
+                    waCard.classList.add('hidden');
+                    waMini.classList.remove('hidden');
+                });
+                
+                // Ao clicar na miniatura, esconde a miniatura e restaura o card
+                waMini.addEventListener('click', () => {
+                    waMini.classList.add('hidden');
+                    waCard.classList.remove('hidden');
+                });
+            }
+        });
+    </script><script src="sc.js"></script>
 </body>
 </html>
